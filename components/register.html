@@ -26,32 +26,33 @@
                             <h3 style="text-align:center">Fundoo-Register!!</h3>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">First Name</label>
+                            <label for="first name">First Name</label>
                             <input type="text" class="form-control"
-                                id="first name">
+                                id="firstName">
 
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">last Name</label>
+                            <label for="lastName">last Name</label>
                             <input type="text" class="form-control"
-                                id="last name">
+                                id="lastName">
 
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
+                            <label for="email">Email address</label>
                             <input type="email" class="form-control"
-                                id="exampleInputEmail1"
+                                id="email"
                                 aria-describedby="emailHelp">
 
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
+                            <label for="password">Password</label>
                             <input type="password" class="form-control"
-                                id="exampleInputPassword1">
+                                id="password">
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-block" id="Register">Submit</button>
+                        <button type="submit" class="btn btn-primary btn-block"
+                            id="Register">Submit</button>
                         <br>
 
                     </form>
@@ -73,7 +74,8 @@
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
     </body>
-
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
     <script>
         
         $(document).ready(function () {
@@ -84,7 +86,6 @@
             var email = $("#email").val().trim();
             var password = $("#password").val().trim();
             console.log("firstname",firstName,"lastname",lastName,"email",email,"password++++++++++++++++",password);
-            if (firstName != "" && lastName != "") {
                 $.ajax({
                     url: 'http://localhost:4500/register',
                     type: 'POST',
@@ -97,19 +98,18 @@
                     processData: false,
                     contentType: 'application/json',
                     success: function (data) {
-                        alert('Success!')
+                        alert('registered!')
                     },
                     error: function (jqXHR, textStatus, err) {
                         alert('text status ' + textStatus + ', err ' + err)
                     }
 
                 })
-            }
+            
         });
     });
     
     
     </script>
-
--
+    -
 </html>
