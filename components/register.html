@@ -51,7 +51,7 @@
                                 id="exampleInputPassword1">
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                        <button type="submit" class="btn btn-primary btn-block" id="Register">Submit</button>
                         <br>
 
                     </form>
@@ -73,4 +73,43 @@
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
     </body>
+
+    <script>
+        
+        $(document).ready(function () {
+        $("#Register").click(function () {
+            event.preventDefault();
+            var firstName = $("#firstName").val().trim();
+            var lastName = $("#lastName").val().trim();
+            var email = $("#email").val().trim();
+            var password = $("#password").val().trim();
+            console.log("firstname",firstName,"lastname",lastName,"email",email,"password++++++++++++++++",password);
+            if (firstName != "" && lastName != "") {
+                $.ajax({
+                    url: 'http://localhost:4500/register',
+                    type: 'POST',
+                    data: JSON.stringify({
+                        firstName: firstName,
+                        lastName: lastName,
+                        email: email,
+                        password: password
+                    }),
+                    processData: false,
+                    contentType: 'application/json',
+                    success: function (data) {
+                        alert('Success!')
+                    },
+                    error: function (jqXHR, textStatus, err) {
+                        alert('text status ' + textStatus + ', err ' + err)
+                    }
+
+                })
+            }
+        });
+    });
+    
+    
+    </script>
+
+-
 </html>
