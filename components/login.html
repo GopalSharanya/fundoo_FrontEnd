@@ -91,7 +91,8 @@
                 success:
                     function (response) {
                         console.log(response);
-                        localStorage.setItem("email", response.data[0].email)
+                        localStorage.setItem("email", response.data[0].email);
+                        window.location='dashboard.html'
                     }
 
                 ,

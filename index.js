@@ -30,6 +30,11 @@ app.get('/forgotPassword.html', function (req, res) {
     res.sendFile(path.join(__dirname + '/components/forgotPassword.html'));
 });
 
+
+app.get('/dashboard.html', function (req, res) {
+    res.sendFile(path.join(__dirname + '/components/dashboard.html'));
+});
+
 var server = app.listen(process.env.PORT, () => {
     console.log("frontend server listening on port ", process.env.PORT);
 });
