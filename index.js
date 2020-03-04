@@ -22,6 +22,11 @@ app.get('/login.css', function (req, res) {
     res.sendFile(path.join(__dirname + '/components/login.css'));
 });
 
+app.get('/dashbord.css', function (req, res) {
+    res.sendFile(path.join(__dirname + '/components/dashbord.css'));
+});
+
+
 app.get('/register.html', function (req, res) {
     res.sendFile(path.join(__dirname + '/components/register.html'));
 });
@@ -34,6 +39,9 @@ app.get('/forgotPassword.html', function (req, res) {
 app.get('/dashboard.html', function (req, res) {
     res.sendFile(path.join(__dirname + '/components/dashboard.html'));
 });
+
+
+
 
 var server = app.listen(process.env.PORT, () => {
     console.log("frontend server listening on port ", process.env.PORT);

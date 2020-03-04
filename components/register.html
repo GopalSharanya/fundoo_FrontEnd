@@ -28,27 +28,27 @@
                         <div class="form-group">
                             <label for="first name">First Name</label>
                             <input type="text" class="form-control"
-                                id="firstName">
+                                id="firstName"  pattern=".{4,}" title="Eight or more characters">
 
                         </div>
 
                         <div class="form-group">
                             <label for="lastName">last Name</label>
                             <input type="text" class="form-control"
-                                id="lastName">
+                                id="lastName" > 
 
                         </div>
                         <div class="form-group">
                             <label for="email">Email address</label>
                             <input type="email" class="form-control"
                                 id="email"
-                                aria-describedby="emailHelp">
+                                aria-describedby="emailHelp" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
 
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
                             <input type="password" class="form-control"
-                                id="password">
+                                id="password"  pattern=".{8,}">
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-block"
