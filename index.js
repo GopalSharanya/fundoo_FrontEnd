@@ -40,6 +40,11 @@ app.get('/dashboard.html', function (req, res) {
     res.sendFile(path.join(__dirname + '/components/dashboard.html'));
 });
 
+app.get('/one.jpeg', function (req, res) {
+    res.sendFile(path.join(__dirname + '../../../one.jpeg'));
+});
+
+
 
 
 

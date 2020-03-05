@@ -22,60 +22,73 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div class="menu-container"><i class="fa fa-lightbulb-o"></i>Notes</div>
-        <div class="menu-container"><i class="fa fa-bell-o"></i>Reminders</div>
-        <div class="menu-container"><i class="fa fa-pencil"></i>Edit Labels</div>
-        <div class="menu-container"><i class="fa fa-envelope-open-o"></i>Archive</div>
-        <div class="menu-container"><i class="fa fa-trash-o"></i>Bin</div>
-      </div>
-      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;
-      </span>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <div class="keepContainer">
-          <h2>Keep</h2>
-        </div>
-        <div class="right-bar">
-          <ul class="nav navbar-nav navbar-right">
-            <i class="fa fa-repeat" style="font-size: 25px ; color: gray ;"
-              data-toggle="tooltip" data-placement="bottom" title="Refreh"></i>
-            <i class="fa fa-bars" style="font-size: 25px; color: gray"
-              data-toggle="tooltip" data-placement="bottom" title="List-View"></i>
-            <i class="fa fa-cog" style="font-size: 25px; color: gray"
-              data-toggle="tooltip" data-placement="bottom" title="Settings"></i>
-            <div class="dropdown">
-              <a href="" # class="account">
-                <img src="../assets/images/keep.png" class="profile-circle" />
-              </a>
-              <div class="submenu" style="display: none;">
-                <ul class="root">
-                  <li>
-                    <a href="#">Sign Out</a>
-                  </li>
-                </ul>
+    <div class="navigationBar">
+      <nav class="toolbar">
+        <div class="toolbar1">
+          <div class="keep-allignment">
+            <div class="sidenavigationbar">
+              <div class="menubar">
+                  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#8801; </span>
               </div>
+              <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#"><i class="fa fa-lightbulb-o"></i>Notes</a>
+                <a href="#"><i class="fa fa-bell-o"></i>Reminders</a>
+                <div class="dropdown-divider"></div>
+                <a href="#"><i class="fa fa-pencil"></i>Edit Labels</a>
+                <div class="dropdown-divider"></div>
+                <a href="#"><i class="fa fa-arrow-circle-down"></i>Archive</a>
+                <a href="#"><i class="fa fa-trash-o"></i>Bin</a>
+              </div>                          
             </div>
-          </ul>
-        </div>
+            <div>
+              <img
+                src="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png"
+                width: 40px; height: 40px; class="d-inline-block align-top"
+                alt="">
+            </div>
+            <div class="keep">
+              <h4>Keep</h4>
+            </div>
+          </div>
+          <div class="rightside">
+            <div class="threeicons">
+              <i class="repeat fa fa-repeat"></i>
+              <i class="listbar fa fa-bars fa-lg"></i>
+              <i class="setting fa fa-cog fa-lg"></i>
+            </div>
+          </div>
 
-      </div>
-    </nav>
+          <div class="signoutdropdown">
+                  <li class="nav-item avatar dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-5" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                      <img src="" class="rounded-circle z-depth-0" alt="avatar image">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-left " aria-labelledby="navbarDropdownMenuLink-5">
+                      <a class="dropdown-item" href="#">Sign-Out</a>
+   
+                    </div>
+                  </li>
+          </div>
+
+        </div>
+      </nav>
+    </div>
+
 
     <script>
       function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
         document.getElementById("main").style.marginLeft = "250px";
-        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
       }
       
       function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("main").style.marginLeft= "0";
-        document.body.style.backgroundColor = "white";
       }
       </script>
+         
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
       crossorigin="anonymous"></script>

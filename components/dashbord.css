@@ -1,52 +1,115 @@
+.toolbar{
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  font: 13px/27px Roboto, RobotoDraft, Arial, sans-serif;
+  
+}
+.toolbar1{
+  display: flex;
+    justify-content: space-between;
+}
 
-.bg-light {
-    
-background-color: lightgray !important
+.keep-allignment {
+  display: flex;
+  align-items: center;
+}
+
+.keep {
+  color: #5f6368;
+  width: 40px;
+  opacity: 1;
+  height: 40px;
+}
+
+.rightside{
+  color: #5f6368;
+  display: flex
+}
+
+.search-container{
+  width: 63%
+}
+.searchbar{
+  width: 80%;
+  opacity: .54;
+    background-color: rgba(95,99,104,0.157);
+    transition: opacity .218s linear,visibility 0s linear;
+    box-sizing: border-box;
+    height: 48px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 48px;
+}
+.threeicons{
+  padding-top: 10px;
+  padding-left: 932px
+  
+}
+
+
+.repeat{
+  height: 30px;
+  opacity: .54;
+  padding-right: 20px
+}:hover{
 
 }
 
 
+.listbar{
+  height: 30px;
+  opacity: .54;
+  padding-right: 20px
+
+}
+
+.setting{
+  height: 30px;
+  opacity: .54;
+}
+
 
 .sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color:whitesmoke;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-  }
-  
-  .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-  
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
-  
-  #main {
-    transition: margin-left .5s;
-    padding: 16px;
-  }
-  
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
+  height: 100%;
+  width: 10%;
+  position: fixed;
+  background-color: whitesmoke;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.menubar{
+
+  display: initial;
+}
+
+
+.signoutdropdown{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding-right: 10%
+}
