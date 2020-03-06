@@ -21,17 +21,20 @@
     <title>fundoo!!</title>
   </head>
   <body>
-
+    <!-- navigation bar-->
     <div class="navigationBar">
       <nav class="toolbar">
         <div class="toolbar1">
+          <!-- keep, side navigation bar-->
           <div class="keep-allignment">
             <div class="sidenavigationbar">
               <div class="menubar">
-                  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#8801; </span>
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#8801;
+                </span>
               </div>
               <div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="javascript:void(0)" class="closebtn"
+                  onclick="closeNav()">&times;</a>
                 <a href="#"><i class="fa fa-lightbulb-o"></i>Notes</a>
                 <a href="#"><i class="fa fa-bell-o"></i>Reminders</a>
                 <div class="dropdown-divider"></div>
@@ -39,7 +42,7 @@
                 <div class="dropdown-divider"></div>
                 <a href="#"><i class="fa fa-arrow-circle-down"></i>Archive</a>
                 <a href="#"><i class="fa fa-trash-o"></i>Bin</a>
-              </div>                          
+              </div>
             </div>
             <div>
               <img
@@ -51,6 +54,7 @@
               <h4>Keep</h4>
             </div>
           </div>
+          <!-- setting, refresh, list veiw-->
           <div class="rightside">
             <div class="threeicons">
               <i class="repeat fa fa-repeat"></i>
@@ -58,37 +62,70 @@
               <i class="setting fa fa-cog fa-lg"></i>
             </div>
           </div>
-
+          <!-- sign out awathar-->
           <div class="signoutdropdown">
-                  <li class="nav-item avatar dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-5" data-toggle="dropdown" aria-haspopup="true"
-                      aria-expanded="false">
-                      <img src="" class="rounded-circle z-depth-0" alt="avatar image">
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-left " aria-labelledby="navbarDropdownMenuLink-5">
-                      <a class="dropdown-item" href="#">Sign-Out</a>
-   
-                    </div>
-                  </li>
+            <li class="nav-item avatar dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-5"
+                data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <img src="" class="rounded-circle z-depth-0" alt="avatar image">
+              </a>
+              <div class="dropdown-menu dropdown-menu-left"
+                aria-labelledby="navbarDropdownMenuLink-5">
+                <a class="dropdown-item" href="#">Sign-Out</a>
+
+              </div>
+            </li>
           </div>
 
         </div>
       </nav>
-    </div>
+
+      <!-- BODY-->
+
+      <div class="textbox1 mb-3">
+        <div>
+        <div class="card-title">
+            <input type="text" class="takeanote" placeholder="take a note"></input type="text">
+        </div>
+        </div>
+      </div>
+  
+      <div class="textBox2">
+          <div class="card mb-3">
+              <div class="card-body text-success">
+                <div class="card-title">
+                    <input type="text" class="takeanote" placeholder="take a note"></input type="text">
+                </div>
+                <div class="card-text">
+                    <input type="text" class="takeanote" placeholder="take a note"></input type="text">
+                </div>
+                </div>
+                <div class="card-footer bg-transparent ">
+                  <div class="footericons">
+                    <i class=" foot fa fa-bell"></i>
+                      <i class=" foot fa fa-user-plus"></i>
+                      <i class=" foot fa fa-arrow-circle-o-down"></i>
+                       <i class="foot fa fa-picture-o"></i>
+                       <i class=" foot fa fa-ellipsis-v"></i>
+                    </div>
+
+                </div>
+
+          </div>
+
+      </div>
 
 
     <script>
       function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
+        document.getElementById("mySidenav").style.width = "200px";
       }
       
       function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginLeft= "0";
       }
       </script>
-         
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
       crossorigin="anonymous"></script>

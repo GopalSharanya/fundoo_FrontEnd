@@ -113,3 +113,35 @@
   border-radius: 50%;
   padding-right: 10%
 }
+
+.textbox1{
+  margin: 0 auto; 
+  float: none; 
+  margin-bottom: 10px;
+
+  min-height: 43px;
+  padding: 10px 15px;
+  box-shadow: inset 1px 1px 0 rgba(0,0,0,.1), inset 0 -1px 0 rgba(0,0,0,.07);
+  /* box-shadow: 10px 10px 5px #aaaaaa; */
+
+  max-width: 64rem;
+  height: 10px;
+  border-radius: 7px;
+  margin-top: 4%;
+  box-sizing: border-box;
+}
+
+.takeanote{
+  width: 613px;
+  border: none;
+}
+
+.textBox2{
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+}
+
+.foot{
+  padding-right: 5%;
+}

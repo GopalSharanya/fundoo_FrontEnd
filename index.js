@@ -45,7 +45,9 @@ app.get('/one.jpeg', function (req, res) {
 });
 
 
-
+app.get('/takeaNote.html', function (req, res) {
+    res.sendFile(path.join(__dirname + '/components/takeaNote.html'));
+});
 
 
 var server = app.listen(process.env.PORT, () => {
