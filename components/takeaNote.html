@@ -18,15 +18,17 @@
       src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="dashbord.css">
 
+       
+   
+
     <title>fundoo!!</title>
   </head>
   <body>
    
       
 
-      <!-- BODY-->
-
-      <div class="textbox1 mb-3">
+        <!--Add notes card-->
+      <div class="textbox1 mb-3" id="smallOne">
         <div>
         <div class="card-title">
             <input type="text" class="takeanote" placeholder="take a note"></input type="text">
@@ -34,30 +36,39 @@
         </div>
       </div>
   
-      <div class="textBox2">
+      <!-- second card when you click add notes-->
+      <div class="textBox2" id="largeOne">
           <div class="card mb-3">
               <div class="card-body text-success">
                 <div class="card-title">
-                    <input type="text" class="takeanote" placeholder="take a note"></input type="text">
+                    <input type="text" class="takeanote" placeholder="title"></input type="text">
                 </div>
                 <div class="card-text">
-                    <input type="text" class="takeanote" placeholder="take a note"></input type="text">
+                    <input type="text" class="takeanote" placeholder="discription"></input type="text">
                 </div>
                 </div>
                 <div class="card-footer bg-transparent ">
                   <div class="footericons">
+                    <div class="firstfour">
                     <i class=" foot fa fa-bell"></i>
                       <i class=" foot fa fa-user-plus"></i>
                       <i class=" foot fa fa-arrow-circle-o-down"></i>
                        <i class="foot fa fa-picture-o"></i>
                        <i class=" foot fa fa-ellipsis-v"></i>
-                    </div>
+                      </div>
+                      <div class="buttonclass">
+                          <button type="button" id="closebutton" class="btn btn-light">close</button>
+                      </div>
+                       </div>
 
                 </div>
 
           </div>
 
       </div>
+
+   
+
 
 
  
