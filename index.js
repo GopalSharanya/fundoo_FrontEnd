@@ -50,6 +50,10 @@ app.get('/takeaNote.html', function (req, res) {
 });
 
 
+app.get('/displayNote.html', function (req, res) {
+    res.sendFile(path.join(__dirname + '/components/displayNote.html'));
+});
+
 var server = app.listen(process.env.PORT, () => {
     console.log("frontend server listening on port ", process.env.PORT);
 });

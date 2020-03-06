@@ -38,16 +38,16 @@
   
       <!-- second card when you click add notes-->
       <div class="textBox2" id="largeOne">
-          <div class="card mb-3">
-              <div class="card-body text-success">
+          <div class="cardsss">
+            <div class="card">
+              <div class="  card-body text-success">
                 <div class="card-title">
-                    <input type="text" class="takeanote" placeholder="title"></input type="text">
+                    <textarea type="text" class="takeanote" placeholder="title" style="overflow: hidden"></textarea >
                 </div>
                 <div class="card-text">
-                    <input type="text" class="takeanote" placeholder="discription"></input type="text">
+                    <textarea type="text" class="takeanote" placeholder="discription"></textarea>
                 </div>
                 </div>
-                <div class="card-footer bg-transparent ">
                   <div class="footericons">
                     <div class="firstfour">
                     <i class=" foot fa fa-bell"></i>
@@ -61,15 +61,31 @@
                       </div>
                        </div>
 
-                </div>
 
           </div>
-
+        </div>
       </div>
 
    
 
+      <script>
 
+          $(document).ready(function(){
+            $("#largeOne").hide();
+            $("#closebutton").click(function(){
+              $("#largeOne").hide();
+              $("#smallOne").show();
+            })
+          
+          
+            $("#smallOne").click(function(){
+              $("#smallOne").hide();
+              $("#largeOne").show();
+            })
+          
+          });
+          
+          </script>
 
  
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

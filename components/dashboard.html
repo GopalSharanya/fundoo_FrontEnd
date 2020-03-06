@@ -23,6 +23,14 @@
         $('#takeaNote').load('takeaNote.html');
     });
           </script>
+
+
+<script>
+    $(document).ready(function() {
+  $('#savedNotes').load('displayNote.html');
+});
+    </script>
+
     <link rel="stylesheet" href="dashbord.css">
 
     <title>fundoo!!</title>
@@ -42,7 +50,7 @@
               <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn"
                   onclick="closeNav()">&times;</a>
-                <a href="#"><i class="fa fa-lightbulb-o"></i>Notes</a>
+                <a href="#"><i  class="fa fa-lightbulb-o"></i>Notes</a>
                 <a href="#"><i class="fa fa-bell-o"></i>Reminders</a>
                 <div class="dropdown-divider"></div>
                 <a href="#"><i class="fa fa-pencil"></i>Edit Labels</a>
@@ -92,40 +100,19 @@
       <!--Take A Note-->
       <div id="takeaNote"></div>
 
+<!--Saved Notes-->
+      <!-- <div id="savedNotes"></div> -->
 
 
 
-      <!-- Saved notes
-      <div class="notes3">
-          <div class="card  mb-3">
-              <div class="card-title">
-                  <input type="text" class="titlee" placeholder="title.."></input type="text">
-                </div>
-                <div class="card-text">
-                    <input type="text" class="discription" placeholder="description.."></input type="text">
-                </div>
-            </div>         
-          </div>     
-      </div> -->
-      <!-- script for toggling between large and small notes in add note-->
-      <script>
-
-$(document).ready(function(){
-
-  $("#closebutton").click(function(){
-    $("#largeOne").hide();
-    $("#smallOne").show();
-  })
 
 
-  $("#smallOne").click(function(){
-    $("#smallOne").hide();
-    $("#largeOne").show();
-  })
 
-});
 
-</script>
+
+
+
+
       <!--script for side navigation bar-->
       <script>
       function openNav() {
