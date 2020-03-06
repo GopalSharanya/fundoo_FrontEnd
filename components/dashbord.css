@@ -140,8 +140,19 @@
   border-radius: 7px;
   display: flex;
   justify-content: center;
+  margin-top: 6%;
 }
 
 .foot{
-  padding-right: 5%;
+  padding-right: 20%;
+}
+
+
+.footericons{
+  display: flex;
+    justify-content: space-between;
+}
+
+.firstfour{
+  display: flex
 }

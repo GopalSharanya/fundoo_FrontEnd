@@ -83,7 +83,7 @@
 
       <!-- BODY-->
 
-      <div class="textbox1 mb-3">
+      <div class="textbox1 mb-3" id="smallOne">
         <div>
         <div class="card-title">
             <input type="text" class="takeanote" placeholder="take a note"></input type="text">
@@ -91,7 +91,7 @@
         </div>
       </div>
   
-      <div class="textBox2">
+      <div class="textBox2" id="largeOne">
           <div class="card mb-3">
               <div class="card-body text-success">
                 <div class="card-title">
@@ -103,12 +103,17 @@
                 </div>
                 <div class="card-footer bg-transparent ">
                   <div class="footericons">
+                    <div class="firstfour">
                     <i class=" foot fa fa-bell"></i>
                       <i class=" foot fa fa-user-plus"></i>
                       <i class=" foot fa fa-arrow-circle-o-down"></i>
                        <i class="foot fa fa-picture-o"></i>
                        <i class=" foot fa fa-ellipsis-v"></i>
-                    </div>
+                      </div>
+                      <div class="buttonclass">
+                          <button type="button" id="closebutton"   class="btn btn-light">close</button>
+                      </div>
+                       </div>
 
                 </div>
 
@@ -117,6 +122,35 @@
       </div>
 
 
+
+
+
+
+
+<!-- script for toggling between large and small notes in add note-->
+
+<script>
+
+$(document).ready(function(){
+
+  $("#closebutton").click(function(){
+    $("#largeOne").hide();
+    $("#smallOne").show();
+  })
+
+
+  $("#smallOne").click(function(){
+    $("#smallOne").hide();
+    $("#largeOne").show();
+  })
+
+});
+
+</script>
+
+
+
+<!--script for side navigation bar-->
     <script>
       function openNav() {
         document.getElementById("mySidenav").style.width = "200px";
