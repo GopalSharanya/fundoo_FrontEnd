@@ -156,3 +156,18 @@
 .firstfour{
   display: flex
 }
+
+.notes3{
+  width: 288px;
+  height: 200px;
+  display: flex
+}
+
+.titlee{
+  border: none
+}
+
+.discription{
+  border: none; 
+  height: 159px;
+}
