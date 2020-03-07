@@ -133,7 +133,12 @@
 .takeanote{
   width: 613px;
   border: none;
-  outline: none
+  outline: none;
+  box-sizing: border-box;
+  font-variant-ligatures: none;
+  outline: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .textBox2{
