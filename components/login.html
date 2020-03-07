@@ -93,7 +93,7 @@
                         event.preventDefault();
                         console.log(response);
                         localStorage.setItem("email", response.data[0].email);
-                        localStorage.setItem("token", )
+                        localStorage.setItem("token", response.token);
                         window.location='dashboard.html'
                     }
 
