@@ -90,8 +90,10 @@
                 data: data,
                 success:
                     function (response) {
+                        event.preventDefault();
                         console.log(response);
                         localStorage.setItem("email", response.data[0].email);
+                        localStorage.setItem("token", )
                         window.location='dashboard.html'
                     }
 

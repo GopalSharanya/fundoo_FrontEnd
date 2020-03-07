@@ -104,12 +104,14 @@
                     type: 'POST',
                     data: JSON.stringify({
                       discription : discription,
-                      title : title
+                      title : title,
+                      headers: { token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7InVzZXJfaWQiOiI1ZTUzNWNmYTk1NzI0OTJjZWUzZjMzNGQiLCJlbWFpbCI6InNoYXJhbnlhZ29wYWw5N0BnbWFpbC5jb20ifSwiaWF0IjoxNTgzNTYzMDA4LCJleHAiOjE1ODM2NDk0MDh9.rdih1JdgaU3XKdnQZ9n6f5Kdel_GS144zfF_Zu1bicM" }
                     }),
                     processData: false,
                     contentType: 'application/json',
                     success: function (data) {
-                      console.log(data," DATA BACK FROM BACKEND @@@@@@")
+                      console.log(data," DATA BACK FROM BACKEND @@@@@@");
+
                         alert('ADDED:)')
                     },
                     error: function (jqXHR, textStatus, err) {
