@@ -174,31 +174,7 @@
 
 
 
-          <script>
           
-          $(document).ready(function(){
-          
-            $.ajax({
-                    url: 'http://localhost:4500/note/getNotes',
-                    type: 'POST',
-                    data: JSON.stringify({
-                      email : localStorage.getItem("email"),
-                      headers: {"token": localStorage.getItem("token")}
-                    }),
-                    processData: false,
-                    contentType: 'application/json',
-                    success: function (data) {
-                      console.log(data," DATA BACK FROM BACKEND @@@@@@");
-                    },
-                    error: function (jqXHR, textStatus, err) {
-                        alert('text status ' + textStatus + ', err ' + err)
-                    }
-
-                })
-          })
-          
-          </script>
-
 
 
    
