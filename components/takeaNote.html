@@ -42,10 +42,10 @@
             <div class="card">
               <div class="  card-body text-success">
                 <div class="card-title">
-                    <textarea type="text" class="takeanote titttle" placeholder="Title.." style="overflow: hidden"></textarea >
+                    <textarea type="text" class="takeanote titttle" name="getTitle" id="getTitle"    placeholder="Title.." style="overflow: hidden"></textarea >
                 </div>
                 <div class="card-text">
-                    <textarea type="text" class="takeanote discriptionn" placeholder="Discription"></textarea>
+                    <textarea type="text" class="takeanote discriptionn" name="getDis" id="getDis"   placeholder="Discription"></textarea>
                 </div>
                 </div>
                   <div class="footericons">
@@ -66,8 +66,49 @@
         </div>
       </div>
 
+
+      
+
+
+
+
+      <!--Saved Notes Card-->
+
+      <!-- <div class="notes3">
+        <div class="card  mb-3">
+            <div class="card-title">
+                <input type="text" class="titlee" name="takeTitle" id="takeTitle" placeholder="title.."></input type="text">
+              </div>
+              <div class="card-text">
+                  <input type="text" class="discription" name="takeDis" id="takeDis" placeholder="description.."></input type="text">
+              </div>
+          </div>         
+        </div>     
+    </div>  -->
+    
+
+<!--Script to store title and discription into saved notes card-->
+
+
+<!-- <script>
+  function sync()   onkeyup="sync()" 
+  {
+    var getTitle = document.getElementById('getTitle');
+    var takeTitle = document.getElementById('takeTitle');
+    takeTitle.value = getTitle.value;
+
+
+
+    var getDis = document.getElementById('getDis');
+    var takeDis = document.getElementById('takeDis');
+    takeDis.value = getDis.value;
+  }
+  </script> -->
+  
+
+
    
-<!-- Script to hide and open addNotes Card-->
+<!-- Script to hide and open addNotes Card    --> 
       <script>
 
           $(document).ready(function(){
@@ -111,6 +152,7 @@
                     contentType: 'application/json',
                     success: function (data) {
                       console.log(data," DATA BACK FROM BACKEND @@@@@@");
+
                         alert('ADDED:)')
                     },
                     error: function (jqXHR, textStatus, err) {
@@ -120,7 +162,7 @@
                 })
                   }
                   else{
-                    alert("title or discription cant be empty!!")
+                    alert("title or discription can't be empty!!")
                   }
 
                 })
@@ -128,6 +170,49 @@
           
           
           </script>
+
+
+
+          <!--DISPLAY NOTES, WHEN CLOSE BUTTON IS CLICKED THE WHOLE DISPLAY NOTES WILL BE REFRESHED-->
+
+
+          <script>
+          
+          
+          $(document).ready(function(){
+            console.log(localStorage.getItem("token"),"PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP")
+            $("#closebutton").click(function(){
+              $.ajax({
+                url: 'http://localhost:4500/note/getNotes',
+                type: 'GET',
+                processData: false,
+                    contentType: 'application/json',
+                data: JSON.stringify({
+                      headers: {"token": localStorage.getItem("token")}
+                    }),
+                success : function(notes){
+                  console.log(notes);
+                }
+              })
+            })
+          })
+          
+          
+          
+          
+          
+          
+          </script>
+
+
+
+
+
+
+
+
+
+
 
  
     <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
