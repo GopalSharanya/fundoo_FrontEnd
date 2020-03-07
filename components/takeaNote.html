@@ -18,7 +18,11 @@
       src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="dashbord.css">
 
-       
+    <script>
+      $(document).ready(function() {
+    $('#iconsbekku').load('icons.html');
+});
+      </script>    
    
 
     <title>fundoo!!</title>
@@ -48,20 +52,17 @@
                     <textarea type="text" class="takeanote discriptionn" name="getDis" id="getDis"   placeholder="Discription"></textarea>
                 </div>
                 </div>
-                  <div class="footericons">
-                    <div class="firstfour">
-                    <i class=" foot fa fa-bell"></i>
-                      <i class=" foot fa fa-user-plus"></i>
-                      <i class=" foot fa fa-arrow-circle-o-down"></i>
-                       <i class="foot fa fa-picture-o"></i>
-                       <i class=" foot fa fa-ellipsis-v"></i>
-                      </div>
-                      <div class="buttonclass">
-                          <button type="button" id="closebutton" class="btn btn-light">close</button>
-                      </div>
-                       </div>
+                <!--importing icons to footer-->
+                <div class="withicons">
 
+                  <div id="iconsbekku"></div>
+                  <div class="buttonclass">
+                      <button type="button" id="closebutton" class="btn btn-light">close</button>
+                  </div>
+                   </div>
 
+                </div>
+               
           </div>
         </div>
       </div>
@@ -188,8 +189,6 @@
                     contentType: 'application/json',
                     success: function (data) {
                       console.log(data," DATA BACK FROM BACKEND @@@@@@");
-
-                        alert('ADDED:)')
                     },
                     error: function (jqXHR, textStatus, err) {
                         alert('text status ' + textStatus + ', err ' + err)

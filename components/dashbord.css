@@ -184,3 +184,11 @@
   height: 159px;
 }
 
+.withicons{
+  display: inherit;
+  justify-content: space-between
+}
+
+.card{
+  height: 173px;
+}
