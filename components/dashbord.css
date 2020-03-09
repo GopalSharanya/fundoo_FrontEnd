@@ -169,11 +169,7 @@
   display: flex
 }
 
-.notes3{
-  width: 288px;
-  height: 200px;
-  display: flex
-}
+
 
 .titlee{
   border: none
@@ -192,3 +188,26 @@
 .card{
   height: 173px;
 }
+
+
+#writingHere{
+  display: flex ; 
+  flex-wrap: wrap;
+  justify-content: space-around
+}
+.notes3{
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: center 
+}
+
+.changed{
+  width: 236%;
+  border-radius: 1.25rem;
+
+}
+
+.card-text{
+  height: 133px;
+}
+

@@ -7,16 +7,9 @@
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous">
-    <link rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
 
     <script>
           $(document).ready(function() {
@@ -30,7 +23,8 @@
     </script>
 
 
-<script>
+
+    <script>
   $(document).ready(function() {
 $('#iconsbekku').load('icons.html');
 });
@@ -109,16 +103,17 @@ $('#iconsbekku').load('icons.html');
       <div id="takeaNote"></div>
 
       <!--Saved Notes-->
-    <div id="writingHere"></div>
+      <div id="writingHere">
+      </div>
 
 
 
 
-    
+
       <script>
           
-        $(document).ready(function(){
-        
+        $(function($){
+          // $("#icons").load("icons.html")
           $.ajax({
                   url: 'http://localhost:4500/note/getNotes',
                   type: 'POST',
@@ -129,13 +124,30 @@ $('#iconsbekku').load('icons.html');
                   processData: false,
                   contentType: 'application/json',
                   success: function (response) {
-                    // console.log(response," DATA BACK FROM BACKEND @@@@@@");
                     for(var i=0; i<response.data.length; i++){
                      $.each(response.data[i], function(key,value){
-                       if(key == "title" || key == "discription"){
-                      console.log("keyyyyyyyyyyyyyyyyyyyyyyyy : ",key,"valuereeeeeeeeeeeeeeeeeeeeeeeee : ",value,"%%%%%%%%%%%%%%%%%%%%%%%%%%%5");
-                         var $writeHere= $('<div id="takeaNote"></div>');
-                         $('#writingHere').append($writeHere);
+                       if(key == "title" ){
+                       console.log("keyyyyyyyyyyyyyyyyyyyyyyyy : ",key,"valuereeeeeeeeeeeeeeeeeeeeeeeee : ",value,"%%%%%%%%%%%%%%%%%%%%%%%%%%%5");
+                    var out = ' <div class="notes3">'
+                    out+= '<div class="modifiySavedNotes">'
+                    out+= '<div class="iconsdu">'
+                    out+= '  <div class="card changed mb-3">'
+                    out+= '<div class="card-title">'
+                    out+= response.data[i].title
+                    out+= ' </div>'
+                    out+= ' <div class="card-text">'
+                    out+= response.data[i].discription
+                    out+= '</div>'
+                    out+= '<div id="icons"></div>'
+                    out+= '<div id= "iconsbekku"></div>'
+                    out+= '</div>'
+                    out+= ' </div>'
+                    out+= ' </div>'
+                    out+= '</div> '
+                    out+= ' </div> '
+                    out+= ' </div> '
+
+            $('#writingHere').append(out);
                        }
                     })
                     }
@@ -148,13 +160,6 @@ $('#iconsbekku').load('icons.html');
         })
         
         </script>
-
-
-
-
-
-
-
       <!--script for side navigation bar-->
       <script>
       function openNav() {
@@ -165,9 +170,10 @@ $('#iconsbekku').load('icons.html');
         document.getElementById("mySidenav").style.width = "0";
       }
       </script>
-       <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"></script>  -->
+      crossorigin="anonymous"></script>    -->
+      <!-- <script src="https://code.jquery.com/jquery-1.11.1.js"></script> -->
       <script
         src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
