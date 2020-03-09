@@ -140,6 +140,8 @@
   outline: none;
   white-space: pre-wrap;
   word-wrap: break-word;
+  font-size: large;
+  height: 46px;
 }
 
 .textBox2{
@@ -151,8 +153,9 @@
   /* transition: background-color .218s ease-in-out,box-shadow .218s ease-in-out */
 }
 .cardsss{
-  box-shadow: 0 7px 34px rgba(0,0,0,0.20)
-
+  box-shadow: 0 7px 9px rgba(0,0,0,0.20);
+  border-radius: 14px;
+  height: 128px;
 }
 
 .foot{
