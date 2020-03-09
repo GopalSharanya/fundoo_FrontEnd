@@ -19,6 +19,7 @@
   width: 40px;
   opacity: 1;
   height: 40px;
+  font-size: 2.3rem;
 }
 
 .rightside{
@@ -72,8 +73,8 @@
 
 .sidenav {
   height: 100%;
-  width: 10%;
-  position: fixed;
+  width: 175px ; 
+   position: fixed;
   background-color: whitesmoke;
   overflow-x: hidden;
   transition: 0.5s;
@@ -81,7 +82,7 @@
 }
 
 .sidenav a {
-  padding: 8px 8px 8px 32px;
+  padding: 8px 8px 8px 19px;
   text-decoration: none;
   font-size: 15px;
   color: black;
@@ -211,3 +212,12 @@
   height: 133px;
 }
 
+
+.iiii{
+  font-size: 1.7em;
+  margin-right: 22px;
+}
+
+.iiit{
+  font-size: 17px;
+}
