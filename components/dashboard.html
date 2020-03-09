@@ -108,12 +108,10 @@ $('#iconsbekku').load('icons.html');
 
 
 
-
-
+      <!--SAVED NOTES-->
       <script>
           
         $(function($){
-          // $("#icons").load("icons.html")
           $.ajax({
                   url: 'http://localhost:4500/note/getNotes',
                   type: 'POST',
@@ -141,8 +139,8 @@ $('#iconsbekku').load('icons.html');
                     out+= '<div id="icons"></div>'
 
                       //for icons
-                      out+= ' <div class="footericons">'
-                        out+= '<div class="firstfour">'
+                          out+= ' <div class="footericons">'
+                          out+= '<div class="firstfour">'
                           out+= '<i class="foot fa fa-bell"></i>'
                           out+= '<i class="foot fa fa-user-plus"></i>'
                           out+= '<i class="foot fa fa-arrow-circle-o-down"></i>'
@@ -151,7 +149,6 @@ $('#iconsbekku').load('icons.html');
                           out+= '</div>'
                           out+= '</div>'
 
-                    out+= '<div id= "iconsbekku"></div>'
                     out+= '</div>'
                     out+= ' </div>'
                     out+= ' </div>'
