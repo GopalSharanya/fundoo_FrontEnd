@@ -38,10 +38,10 @@
          <div class="iconsdu">
           <div class="card  mb-3">
               <div class="card-title">
-                  <input type="text" class="titlee" placeholder="title.."></input type="text">
+                  <input type="text" class="titlee" placeholder="title.." id="titlee"></input type="text">
                 </div>
                 <div class="card-text">
-                    <input type="text" class="discription" placeholder="description.."></input type="text">
+                    <input type="text" class="discription" placeholder="description.." id="discription"></input type="text">
                 </div>
             </div>
             <div id="iconsbekku"></div>
@@ -50,36 +50,7 @@
       </div>  
       
 
-       
-      <script>
-          
-          $(document).ready(function(){
-          
-            $.ajax({
-                    url: 'http://localhost:4500/note/getNotes',
-                    type: 'POST',
-                    data: JSON.stringify({
-                      email : localStorage.getItem("email"),
-                      headers: {"token": localStorage.getItem("token")}
-                    }),
-                    processData: false,
-                    contentType: 'application/json',
-                    success: function (response) {
-                      var responseJ = JSON.parse(response);
-                      for(var i=0; i<response.data.length; i++){
-                        
-                      }
-                      console.log(data," DATA BACK FROM BACKEND @@@@@@");
-                    },
-                    error: function (jqXHR, textStatus, err) {
-                        alert('text status ' + textStatus + ', err ' + err)
-                    }
-
-                })
-          })
-          
-          </script>
-
+   
 
   
  
