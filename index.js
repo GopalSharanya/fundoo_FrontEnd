@@ -40,6 +40,10 @@ app.get('/forgotPassword.html', function (req, res) {
 });
 
 
+app.get('/dialog.html', function (req, res) {
+    res.sendFile(path.join(__dirname + '/components/dialogBox.html'));
+});
+
 app.get('/dashboard.html', function (req, res) {
     res.sendFile(path.join(__dirname + '/components/dashboard.html'));
 });
