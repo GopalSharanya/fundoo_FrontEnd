@@ -163,17 +163,41 @@ $('#iconsbekku').load('icons.html');
                     out+= ' </div> '
 
             $('#writingHere').append(out);
+         
      
                        }
+                       
                     })
-                    }
                     
+                    }
+                    $('.archiveMadu').click(function(){
+                      console.log("XXXXXXXXXX", this._id)
+                      $.ajax({
+                        url: 'http://localhost:4500/note/addNote',
+                        type: 'POST',
+                        data: JSON.stringify({
+                          _id: this._id,
+                          headers: {"token": localStorage.getItem("token")}
+                        }),
+                        success : function(data){
+                          alert("archived",data);
+                        },
+                        error: function(){
+                          alert("error in archiving");
+                        }
+                      })
+                    })
+
+
                   },
                   error: function (jqXHR, textStatus, err) {
                       alert('text status ' + textStatus + ', err ' + err)
                   }
 
-             })   
+              })
+
+
+        
         })
         
 
