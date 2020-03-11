@@ -91,7 +91,7 @@
 }
 
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: grey;
 }
 
 .sidenav .closebtn {
@@ -132,7 +132,7 @@
 }
 
 .takeanote{
-  width: 613px;
+  width: 112px;
   border: none;
   outline: none;
   box-sizing: border-box;
@@ -140,9 +140,15 @@
   outline: none;
   white-space: pre-wrap;
   word-wrap: break-word;
+  height: 62px;
   font-size: large;
-  height: 46px;
+
 }
+
+.aa{
+  height: 26px;
+}
+
 
 .textBox2{
   border-radius: 7px;
@@ -155,7 +161,10 @@
 .cardsss{
   box-shadow: 0 7px 9px rgba(0,0,0,0.20);
   border-radius: 14px;
-  height: 128px;
+  /* height: 154px */
+  height: auto;
+  width: 630px;
+
 }
 
 .foot{
@@ -170,10 +179,19 @@
 }
 
 .firstfour{
-  display: flex
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 10px !important;
 }
 
+.fa{
+  font-size: small !important;
+}
 
+.qq{
+  margin: inherit
+}
 
 .titlee{
   border: none
@@ -182,6 +200,7 @@
 .discription{
   border: none; 
   height: 159px;
+  
 }
 
 .withicons{
@@ -221,6 +240,86 @@
   margin-right: 22px;
 }
 
+.iiii :hover {
+  color: yellow;
+}
+
 .iiit{
   font-size: 17px;
+}
+
+.iconandbutton{
+  display: flex;
+  justify-content: space-between;
+}
+
+.iconnn{
+  display: flow-root
+}
+
+
+.buttonclass{
+  
+  box-sizing: border-box;
+    color: rgba(0,0,0,0.87);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    letter-spacing: .01785714em;
+    font-family: 'Google Sans',Roboto,Arial,sans-serif;
+    font-size: medium !important;
+    font-weight: 500;
+    line-height: 1.25rem;
+    height: 36px;
+    padding: 8px 24px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+
+
+    /* font-size: 16px; */
+    font-style: italic;
+    font-variant: proportional-nums
+}
+
+.oooo{
+  border: none;
+  background: none;
+}
+
+     
+.maintext{
+  font-family: 'Google Sans',Roboto,Arial,sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5rem;
+  min-height: 30px;
+  color: #202124;
+  padding: 4px 16px 12px 16px;
+  box-sizing: border-box;
+    font-variant-ligatures: none;
+    outline: none;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    display: block;
+}
+
+.titletext{
+  padding-top: 12px;
+  letter-spacing: .00625em;
+  font-family: 'Google Sans',Roboto,Arial,sans-serif;
+  font-size: 2rem;
+  font-weight: 545;
+  line-height: 1.5rem;
+  min-height: 38px;
+  padding: 16px 16px 0 16px;
+  transition: background-color .218s ease-in;
+  box-sizing: border-box;
+  font-variant-ligatures: none;
+  outline: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  -webkit-user-modify: read-only;
+  direction: ltr;
+  unicode-bidi: isolate;
 }

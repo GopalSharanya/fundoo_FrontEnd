@@ -52,15 +52,15 @@ $('#iconsbekku').load('icons.html');
               <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn"
                   onclick="closeNav()">&times;</a>
-                  <div class="sideIcons">
-                <a class="iiit" href="#"><i class="fa iiii fa-lightbulb-o"></i>Notes</a>
-                <a href="#"><i class="fa iiii fa-bell-o"></i>Reminders</a>
-                <div class="dropdown-divider"></div>
-                <a href="#"><i class="fa iiii fa-pencil"></i>Edit Labels</a>
-                <div class="dropdown-divider"></div>
-                <a href="#"><i class="fa iiii fa-arrow-circle-down"></i>Archive</a>
-                <a href="#"><i class="fa iiii fa-trash-o"></i>Bin</a>
-              </div>
+                <div class="sideIcons">
+                  <a class="iiit" href="#"><i class="fa iiii fa-lightbulb-o"></i>Notes</a>
+                  <a href="#"><i class="fa iiii fa-bell-o"></i>Reminders</a>
+                  <div class="dropdown-divider"></div>
+                  <a href="#"><i class="fa iiii fa-pencil"></i>Edit Labels</a>
+                  <div class="dropdown-divider"></div>
+                  <a href="#"><i class="fa iiii fa-arrow-circle-down"></i>Archive</a>
+                  <a href="#"><i class="fa iiii fa-trash-o"></i>Bin</a>
+                </div>
               </div>
             </div>
             <div>
@@ -131,11 +131,14 @@ $('#iconsbekku').load('icons.html');
                     var out = ' <div class="notes3">'
                     out+= '<div class="modifiySavedNotes">'
                     out+= '<div class="iconsdu">'
+                      out+= '<div class="simple-list-grid">'
+                        out+= '<ul class="list-grid-ul">'
+                          out+= ''
                     out+= '  <div class="card changed mb-3">'
-                    out+= '<div class="card-title">'
+                    out+= '<div class="card-title titletext">'
                     out+= response.data[i].title
                     out+= ' </div>'
-                    out+= ' <div class="card-text">'
+                    out+= ' <div class="card-text  maintext">'
                     out+= response.data[i].discription
                     out+= '</div>'
                     out+= '<div id="icons"></div>'
@@ -151,6 +154,8 @@ $('#iconsbekku').load('icons.html');
                           out+= '</div>'
                           out+= '</div>'
 
+                          out+= '</div>'
+                          out+= ''
                     out+= '</div>'
                     out+= ' </div>'
                     out+= ' </div>'
@@ -169,6 +174,11 @@ $('#iconsbekku').load('icons.html');
 
               })
         })
+        
+
+
+
+
         
         </script>
       <!--script for side navigation bar-->
