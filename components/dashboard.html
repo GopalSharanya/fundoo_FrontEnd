@@ -131,7 +131,7 @@ $('#iconsbekku').load('icons.html');
                        console.log("keyyyyyyyyyyyyyyyyyyyyyyyy : ",key,"valuereeeeeeeeeeeeeeeeeeeeeeeee : ",value,"%%%%%%%%%%%%%%%%%%%%%%%%%%%5");
                     var out = ' <div class="notes3">'
                     out+= '<div class="modifiySavedNotes">'
-                    out+= '<div class="iconsdu">'
+                    out+= '<div class="iconsdu" data-toggle="modal" data-target="#myModal">'
                     out+= '  <div class="card cc">'
                     out+= '<div class="card-title titletext">'
                     out+= response.data[i].title
@@ -169,6 +169,8 @@ $('#iconsbekku').load('icons.html');
                     })
                     
                     }
+                    // TO ARCHIVE
+
                     $('.archiveMadu').click(function(){
                       console.log("XXXXXXXXXX", this.id)
                       data= JSON.stringify({
@@ -192,7 +194,7 @@ $('#iconsbekku').load('icons.html');
                       })
                     })
 
-
+                    // TO DELETE
                     $('.more').click(function(){
                       console.log("XXXXXXXXXX", this.id)
                       data= JSON.stringify({
@@ -214,6 +216,17 @@ $('#iconsbekku').load('icons.html');
                           alert("error in archiving");
                         }
                       })
+                    })
+
+
+                    // DIALOG BOX TO EDIT TITLE DISCRIPTION
+                    $('.iconsdu').click(function(){
+
+                      var dBox = '<div class="modal fade" id="myModal" role="dialog">'
+                        dBox+= '<div class="modal-dialog modal-sm">'
+                          dBox+= '<div class="modal-content">'
+                            dBox+= '<div class="modal-header">'
+                              dBox+= ''
                     })
 
 
