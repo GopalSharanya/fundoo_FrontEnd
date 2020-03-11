@@ -11,14 +11,21 @@
   color: black;
 }
 
-.container-fluid {
+.container {
   padding: 90px;
+  display: flex;
+  justify-content: center 
+}
+
+@media only screen and (min-width: 375px){
+  .loginmedia{
+    width: 210%
+  }
 }
 
 
-
-
-.nav-container{
-
-  background-color: pink !important;
+@media only screen and (max-width: 320px){
+  .loginmedia{
+    width: 269%
+  }
 }

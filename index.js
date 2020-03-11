@@ -22,6 +22,10 @@ app.get('/login.css', function (req, res) {
     res.sendFile(path.join(__dirname + '/components/login.css'));
 });
 
+app.get('/register.css', function (req, res) {
+    res.sendFile(path.join(__dirname + '/components/register.css'));
+});
+
 app.get('/dashbord.css', function (req, res) {
     res.sendFile(path.join(__dirname + '/components/dashbord.css'));
 });

@@ -76,9 +76,9 @@ $('#iconsbekku').load('icons.html');
           <!-- setting, refresh, list veiw-->
           <div class="rightside">
             <div class="threeicons">
-              <i class="repeat fa fa-repeat fa-lg"></i>
-              <i class="listbar fa fa-bars fa-lg"></i>
-              <i class="setting fa fa-cog fa-lg"></i>
+              <i class="repeat pp7 fa fa-repeat fa-lg" title="refresh"></i>
+              <i class="listbar pp7 fa fa-bars fa-lg"></i>
+              <i class="setting pp7 fa fa-cog fa-lg"></i>
             </div>
           </div>
           <!-- sign out awathar-->
@@ -127,12 +127,12 @@ $('#iconsbekku').load('icons.html');
                     console.log("*****************************************",response)
                     for(var i=0; i<response.data.length; i++){
                      $.each(response.data[i], function(key,value){
-                       if(key == "title" ){
+                       if(key == "title" && response.data[i].isArchive != true && response.data[i].isTrash != true){
                        console.log("keyyyyyyyyyyyyyyyyyyyyyyyy : ",key,"valuereeeeeeeeeeeeeeeeeeeeeeeee : ",value,"%%%%%%%%%%%%%%%%%%%%%%%%%%%5");
                     var out = ' <div class="notes3">'
                     out+= '<div class="modifiySavedNotes">'
                     out+= '<div class="iconsdu">'
-                    out+= '  <div class="card changed mb-3">'
+                    out+= '  <div class="card cc">'
                     out+= '<div class="card-title titletext">'
                     out+= response.data[i].title
                     out+= ' </div>'
@@ -141,15 +141,14 @@ $('#iconsbekku').load('icons.html');
                     out+= '</div>'
                     out+= '<div id="icons"></div>'
 
-                      //for icons
+                      //for icons  
                           out+= ' <div class="footericons">'
                           out+= '<div class="firstfour">'
-                          out+= '<i class="foot fa fa-bell"></i>'
-                          out+= '<i class="foot  fa fa-user-plus"></i>'
-                          // out+= ''
-                          out+= '<span class="archiveMadu" id="archiveMadu" title="archive" ><i class="foot fa fa-arrow-circle-o-down"></i> </span>'
-                          out+= '<i class="foot fa fa-picture-o" title="add picture" ></i>'
-                          out+= '<i class="foot fa fa-ellipsis-v"></i>'
+                          out+=  '<span class=" io reminder"  title="reminder" id="'+response.data[i]._id+'" ><i class="foot fa fa-bell"></i> </span>'
+                          out+=  '<span class=" io colloborator"  title="colloborator" id="'+response.data[i]._id+'" ><i class="foot  fa fa-user-plus"></i> </span>'
+                          out+= '<span class=" io archiveMadu"  title="archive" id="'+response.data[i]._id+'" ><i class="foot fa fa-arrow-circle-o-down"></i> </span>'
+                          out+= '<span class=" io addPicture"  title="addPicture" id="'+response.data[i]._id+'" ><i class="foot fa fa-picture-o" title="add picture" ></i> </span>'
+                          out+= '<span class=" io more"  title="More" id="'+response.data[i]._id+'" ><i class="foot fa fa-ellipsis-v"></i> </span>'
                           out+= '</div>'
                           out+= '</div>'
 
@@ -171,16 +170,45 @@ $('#iconsbekku').load('icons.html');
                     
                     }
                     $('.archiveMadu').click(function(){
-                      console.log("XXXXXXXXXX", this._id)
+                      console.log("XXXXXXXXXX", this.id)
+                      data= JSON.stringify({
+                        _id : this.id,
+                        archive : true,
+                        headers: {"token": localStorage.getItem("token")}
+                      })
+                      console.log(data,"%%%%%%%%%%%%%%%%%%%%%%%%%")
                       $.ajax({
-                        url: 'http://localhost:4500/note/addNote',
+                        url: 'http://localhost:4500/note/toArchive',
                         type: 'POST',
-                        data: JSON.stringify({
-                          _id: this._id,
-                          headers: {"token": localStorage.getItem("token")}
-                        }),
+                        data: data,
+                        processData: false,
+                  contentType: 'application/json',
                         success : function(data){
                           alert("archived",data);
+                        },
+                        error: function(){
+                          alert("error in archiving");
+                        }
+                      })
+                    })
+
+
+                    $('.more').click(function(){
+                      console.log("XXXXXXXXXX", this.id)
+                      data= JSON.stringify({
+                        _id : this.id,
+                        archive : true,
+                        headers: {"token": localStorage.getItem("token")}
+                      })
+                      console.log(data,"%%%%%%%%%%%%%%%%%%%%%%%%%")
+                      $.ajax({
+                        url: 'http://localhost:4500/note/toTrash',
+                        type: 'POST',
+                        data: data,
+                        processData: false,
+                  contentType: 'application/json',
+                        success : function(data){
+                          alert("deleted",data);
                         },
                         error: function(){
                           alert("error in archiving");
@@ -199,12 +227,7 @@ $('#iconsbekku').load('icons.html');
 
         
         })
-        
-
-
-
-
-        
+                
         </script>
       <!--script for side navigation bar-->
       <script>
@@ -220,7 +243,7 @@ $('#iconsbekku').load('icons.html');
       <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
       crossorigin="anonymous"></script>    -->
-      <!-- <script src="https://code.jquery.com/jquery-1.11.1.js"></script> -->
+      <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
       <script
         src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"

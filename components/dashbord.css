@@ -167,24 +167,17 @@
 
 }
 
-.foot{
-  padding-right: 20%;
+
+.io{
+  padding-right: 10px;
+}
+.reminder {
+  padding-left: 10px;
 }
 
-
-.footericons{
-  display: flex;
-    justify-content: space-between;
-    height: 46px;
+.cc{
+  height: 130px;
 }
-
-.firstfour{
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  margin: 10px !important;
-}
-
 .fa{
   font-size: small !important;
 }
@@ -208,8 +201,8 @@
   justify-content: space-between
 }
 
-.card{
-  height: 173px;
+.pp7{
+  font-size: 61px;
 }
 
 
@@ -224,10 +217,8 @@
   justify-content: center 
 }
 
-.changed{
-  width: 236%;
-  border-radius: 1.25rem;
-
+.iconsdu{
+  width: 203%;
 }
 
 .card-text{
@@ -293,7 +284,6 @@
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.5rem;
-  min-height: 30px;
   color: #202124;
   padding: 4px 16px 12px 16px;
   box-sizing: border-box;
