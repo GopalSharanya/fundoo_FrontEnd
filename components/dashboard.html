@@ -124,6 +124,7 @@ $('#iconsbekku').load('icons.html');
                   processData: false,
                   contentType: 'application/json',
                   success: function (response) {
+                    console.log("*****************************************",response)
                     for(var i=0; i<response.data.length; i++){
                      $.each(response.data[i], function(key,value){
                        if(key == "title" ){
@@ -131,9 +132,6 @@ $('#iconsbekku').load('icons.html');
                     var out = ' <div class="notes3">'
                     out+= '<div class="modifiySavedNotes">'
                     out+= '<div class="iconsdu">'
-                      out+= '<div class="simple-list-grid">'
-                        out+= '<ul class="list-grid-ul">'
-                          out+= ''
                     out+= '  <div class="card changed mb-3">'
                     out+= '<div class="card-title titletext">'
                     out+= response.data[i].title
@@ -147,9 +145,10 @@ $('#iconsbekku').load('icons.html');
                           out+= ' <div class="footericons">'
                           out+= '<div class="firstfour">'
                           out+= '<i class="foot fa fa-bell"></i>'
-                          out+= '<i class="foot fa fa-user-plus"></i>'
-                          out+= '<i class="foot fa fa-arrow-circle-o-down"></i>'
-                          out+= '<i class="foot fa fa-picture-o"></i>'
+                          out+= '<i class="foot  fa fa-user-plus"></i>'
+                          // out+= ''
+                          out+= '<span class="archiveMadu" id="archiveMadu" title="archive" ><i class="foot fa fa-arrow-circle-o-down"></i> </span>'
+                          out+= '<i class="foot fa fa-picture-o" title="add picture" ></i>'
                           out+= '<i class="foot fa fa-ellipsis-v"></i>'
                           out+= '</div>'
                           out+= '</div>'
@@ -164,15 +163,17 @@ $('#iconsbekku').load('icons.html');
                     out+= ' </div> '
 
             $('#writingHere').append(out);
+     
                        }
                     })
                     }
+                    
                   },
                   error: function (jqXHR, textStatus, err) {
                       alert('text status ' + textStatus + ', err ' + err)
                   }
 
-              })
+             })   
         })
         
 
@@ -183,6 +184,7 @@ $('#iconsbekku').load('icons.html');
         </script>
       <!--script for side navigation bar-->
       <script>
+        closeNav();
       function openNav() {
         document.getElementById("mySidenav").style.width = "200px";
       }
