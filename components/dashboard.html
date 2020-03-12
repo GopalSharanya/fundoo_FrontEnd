@@ -15,12 +15,9 @@
       href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-
-
     <!--DIALOG BOX FOR EDIT CARDS-->
-    <div id="dialog" >
-      
+    <div id="dialog">
+
     </div>
 
 
@@ -163,13 +160,33 @@ $('#iconsbekku').load('icons.html');
                           out+= '<span class=" io addPicture"  title="addPicture" id="'+response.data[i]._id+'" ><i class="foot fa fa-picture-o" title="add picture" ></i> </span>'
 
                           // DROP-DOWN MENU FOR MORE 
-                          out+= '<div class="btn-group dropright">'
-                          out+= '<span class=" io "  title="More" id="'+response.data[i]._id+'" ><i class="foot fa fa-ellipsis-v"></i> </span>'
-                          out+= ' <div class="dropdown-menu">'
-                          out+= '<a class="dropdown-item" href="#">Action</a>'
-                          out+= '<a class="dropdown-item" href="#">Action</a>'
-                          out+= '</div>'
-                          out+= '</div>'
+                          // out+= '<div class="btn-group dropright">'
+                          // out+= '<span class=" io "  title="More" id="'+response.data[i]._id+'" ><i class="foot fa fa-ellipsis-v"></i> </span>'
+                        
+                        
+                        
+                        
+                         out+=  '<div class="dropdown ">'
+                          out+=   '<i class="foot fa fa-ellipsis-v" id="foot" ></i>'  
+                          out+=  '<div class="dropdown-content">'
+                            out+=   '<a href="#">DELETE</a>'
+                            out+=    '<a href="#">EDIT LABEL</a>'
+                            out+=   '</div>'
+                            out+=   '</div>'
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                          // out+= ' <div class="dropdown-menu">'
+                          // out+= '<a class="dropdown-item" href="#">Action</a>'
+                          // out+= '<a class="dropdown-item" href="#">Action</a>'
+                          // out+= '</div>'
+                          // out+= '</div>'
 
 
 
@@ -185,6 +202,7 @@ $('#iconsbekku').load('icons.html');
                     out+= '</div> '
                     out+= ' </div> '
                     out+= ' </div> '
+
 
             $('#writingHere').append(out);
          
@@ -275,7 +293,7 @@ $('#iconsbekku').load('icons.html');
         document.getElementById("mySidenav").style.width = "0";
       }
       </script>
-       <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
       crossorigin="anonymous"></script>     -->
       <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
