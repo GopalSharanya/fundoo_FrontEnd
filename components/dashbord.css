@@ -295,3 +295,13 @@
   direction: ltr;
   unicode-bidi: isolate;
 }
+
+
+
+
+
+
+
+.dropdown-toggle::after {
+  display: none;
+}
