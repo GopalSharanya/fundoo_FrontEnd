@@ -10,6 +10,20 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
+    <!--CDN FOR DIALOG BOX EDIT CARDS-->
+    <link rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
+    <!--DIALOG BOX FOR EDIT CARDS-->
+    <div id="dialog" >
+      
+    </div>
+
+
 
     <script>
           $(document).ready(function() {
@@ -128,15 +142,14 @@ $('#iconsbekku').load('icons.html');
                     for(var i=0; i<response.data.length; i++){
                      $.each(response.data[i], function(key,value){
                        if(key == "title" && response.data[i].isArchive != true && response.data[i].isTrash != true){
-                       console.log("keyyyyyyyyyyyyyyyyyyyyyyyy : ",key,"valuereeeeeeeeeeeeeeeeeeeeeeeee : ",value,"%%%%%%%%%%%%%%%%%%%%%%%%%%%5");
                     var out = ' <div class="notes3">'
                     out+= '<div class="modifiySavedNotes">'
                     out+= '<div class="iconsdu" data-toggle="modal" data-target="#myModal">'
                     out+= '  <div class="card cc">'
-                    out+= '<div class="card-title titletext">'
+                    out+= '<div class="card-title titletext yoyoy" id='+response.data[i].title+'>'
                     out+= response.data[i].title
                     out+= ' </div>'
-                    out+= ' <div class="card-text  maintext">'
+                    out+= ' <div class="card-text  maintext" dissc='+response.data[i].discription+'>'
                     out+= response.data[i].discription
                     out+= '</div>'
                     out+= '<div id="icons"></div>'
@@ -221,12 +234,11 @@ $('#iconsbekku').load('icons.html');
 
                     // DIALOG BOX TO EDIT TITLE DISCRIPTION
                     $('.notes3').click(function(){
-                      console.log("clikkkkkkkkkkked")
-                      window.location='dialog.html'
-
+                      console.log("clikkkkkkkkkkked DIALOG BOX",document.getElementsByClassName("yoyoy")[0].id)
+                      $( function() {
+                         $( "#dialog" ).dialog();
+                                } );
                                   })
-
-
                   },
                   error: function (jqXHR, textStatus, err) {
                       alert('text status ' + textStatus + ', err ' + err)
@@ -237,6 +249,7 @@ $('#iconsbekku').load('icons.html');
 
         
         })
+        
                 
         </script>
       <!--script for side navigation bar-->
@@ -262,5 +275,6 @@ $('#iconsbekku').load('icons.html');
         src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+
     </body>
   </html>
