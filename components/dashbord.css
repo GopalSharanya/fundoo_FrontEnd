@@ -1,12 +1,11 @@
-.toolbar{
+.toolbar {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
   width: 100%;
   font: 13px/27px Roboto, RobotoDraft, Arial, sans-serif;
-  
 }
-.toolbar1{
+.toolbar1 {
   display: flex;
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .keep-allignment {
@@ -22,59 +21,54 @@
   font-size: 2.3rem;
 }
 
-.rightside{
+.rightside {
   color: #5f6368;
-  display: flex
+  display: flex;
 }
 
-.search-container{
-  width: 63%
+.search-container {
+  width: 63%;
 }
-.searchbar{
+.searchbar {
   width: 80%;
-  opacity: .54;
-    background-color: rgba(95,99,104,0.157);
-    transition: opacity .218s linear,visibility 0s linear;
-    box-sizing: border-box;
-    height: 48px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 48px;
+  opacity: 0.54;
+  background-color: rgba(95, 99, 104, 0.157);
+  transition: opacity 0.218s linear, visibility 0s linear;
+  box-sizing: border-box;
+  height: 48px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 48px;
 }
-.threeicons{
+.threeicons {
   padding-top: 10px;
-  padding-left: 932px
-  
+  padding-left: 932px;
 }
 
-
-.repeat{
+.repeat {
   height: 30px;
-  opacity: .54;
-  padding-right: 20px
-}:hover{
-
+  opacity: 0.54;
+  padding-right: 20px;
+}
+:hover {
 }
 
-
-.listbar{
+.listbar {
   height: 30px;
-  opacity: .54;
-  padding-right: 20px
-
+  opacity: 0.54;
+  padding-right: 20px;
 }
 
-.setting{
+.setting {
   height: 30px;
-  opacity: .54;
+  opacity: 0.54;
 }
-
 
 .sidenav {
   height: 100%;
-  width: 175px ; 
-   position: fixed;
+  width: 175px;
+  position: fixed;
   background-color: whitesmoke;
   overflow-x: hidden;
   transition: 0.5s;
@@ -102,27 +96,26 @@
   margin-left: 50px;
 }
 
-.menubar{
+.menubar {
   display: flex;
   margin: 20px;
 }
 
-
-.signoutdropdown{
+.signoutdropdown {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  padding-right: 10%
+  padding-right: 10%;
 }
 
-.textbox1{
-  margin: 0 auto; 
-  float: none; 
+.textbox1 {
+  margin: 0 auto;
+  float: none;
   margin-bottom: 10px;
 
   min-height: 43px;
   padding: 10px 15px;
-  box-shadow: inset 2px 4px 0 rgba(0,0,0,.1), inset 0 -1px 0 rgba(0,0,0,.07);
+  box-shadow: inset 2px 4px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.07);
 
   max-width: 64rem;
   height: 10px;
@@ -131,7 +124,7 @@
   box-sizing: border-box;
 }
 
-.takeanote{
+.takeanote {
   width: 112px;
   border: none;
   outline: none;
@@ -142,15 +135,13 @@
   word-wrap: break-word;
   height: 62px;
   font-size: large;
-
 }
 
-.aa{
+.aa {
   height: 26px;
 }
 
-
-.textBox2{
+.textBox2 {
   border-radius: 7px;
   display: flex;
   justify-content: center;
@@ -158,75 +149,70 @@
   height: 170px;
   /* transition: background-color .218s ease-in-out,box-shadow .218s ease-in-out */
 }
-.cardsss{
-  box-shadow: 0 7px 9px rgba(0,0,0,0.20);
+.cardsss {
+  box-shadow: 0 7px 9px rgba(0, 0, 0, 0.2);
   border-radius: 14px;
   /* height: 154px */
   height: auto;
   width: 630px;
-
 }
 
-
-.io{
+.io {
   padding-right: 10px;
 }
 .reminder {
   padding-left: 10px;
 }
 
-.cc{
+.cc {
   height: 130px;
 }
-.fa{
+.fa {
   font-size: small !important;
 }
 
-.qq{
-  margin: inherit
+.qq {
+  margin: inherit;
 }
 
-.titlee{
-  border: none
+.titlee {
+  border: none;
 }
 
-.discription{
-  border: none; 
+.discription {
+  border: none;
   height: 159px;
-  
 }
 
-.withicons{
+.withicons {
   display: inherit;
-  justify-content: space-between
+  justify-content: space-between;
 }
 
-.pp7{
+.pp7 {
   font-size: 61px;
 }
 
-
-#writingHere{
-  display: flex ; 
+#writingHere {
+  display: flex;
   flex-wrap: wrap;
-  justify-content: space-around
+  justify-content: space-around;
 }
-.notes3{
+.notes3 {
   display: flex;
   flex-flow: wrap row;
-  justify-content: center 
+  justify-content: center;
 }
 
-.iconsdu{
+.iconsdu {
   width: 203%;
 }
 
-.card-text{
+.card-text {
   height: 133px;
 }
 
-
-.iiii{
+.iiii {
   font-size: 1.7em;
   margin-right: 22px;
 }
@@ -235,51 +221,47 @@
   color: yellow;
 }
 
-.iiit{
+.iiit {
   font-size: 17px;
 }
 
-.iconandbutton{
+.iconandbutton {
   display: flex;
   justify-content: space-between;
 }
 
-.iconnn{
-  display: flow-root
+.iconnn {
+  display: flow-root;
 }
 
-
-.buttonclass{
-  
+.buttonclass {
   box-sizing: border-box;
-    color: rgba(0,0,0,0.87);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    letter-spacing: .01785714em;
-    font-family: 'Google Sans',Roboto,Arial,sans-serif;
-    font-size: medium !important;
-    font-weight: 500;
-    line-height: 1.25rem;
-    height: 36px;
-    padding: 8px 24px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
+  color: rgba(0, 0, 0, 0.87);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: 0.01785714em;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: medium !important;
+  font-weight: 500;
+  line-height: 1.25rem;
+  height: 36px;
+  padding: 8px 24px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
 
-
-    /* font-size: 16px; */
-    font-style: italic;
-    font-variant: proportional-nums
+  /* font-size: 16px; */
+  font-style: italic;
+  font-variant: proportional-nums;
 }
 
-.oooo{
+.oooo {
   border: none;
   background: none;
 }
 
-     
-.maintext{
-  font-family: 'Google Sans',Roboto,Arial,sans-serif;
+.maintext {
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
   font-size: 1.5rem;
   font-weight: 400;
   letter-spacing: 0;
@@ -287,23 +269,23 @@
   color: #202124;
   padding: 4px 16px 12px 16px;
   box-sizing: border-box;
-    font-variant-ligatures: none;
-    outline: none;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    display: block;
+  font-variant-ligatures: none;
+  outline: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  display: block;
 }
 
-.titletext{
+.titletext {
   padding-top: 12px;
-  letter-spacing: .00625em;
-  font-family: 'Google Sans',Roboto,Arial,sans-serif;
+  letter-spacing: 0.00625em;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
   font-size: 2rem;
   font-weight: 545;
   line-height: 1.5rem;
   min-height: 38px;
   padding: 16px 16px 0 16px;
-  transition: background-color .218s ease-in;
+  transition: background-color 0.218s ease-in;
   box-sizing: border-box;
   font-variant-ligatures: none;
   outline: none;
@@ -314,72 +296,57 @@
   unicode-bidi: isolate;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .search {
-	display: block;
-	margin-left: 1300px;
-	margin-right: auto;
-	margin-bottom: auto;
-	margin-top: -30px;
-	cursor: pointer;
+  display: block;
+  margin-left: 1300px;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-top: -30px;
+  cursor: pointer;
 }
 
 .burger-menu {
-	display: block;
-	margin-left: 100px;
-	margin-right: auto;
-	margin-bottom: auto;
-	margin-top: 1px;
-	cursor: pointer;
+  display: block;
+  margin-left: 100px;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-top: 1px;
+  cursor: pointer;
 }
 
 .dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #000000;
-    min-width: 250px;
-    z-index: 1;
+  display: none;
+  position: absolute;
+  background-color: #000000;
+  min-width: 250px;
+  z-index: 1;
 }
 
 .dropdown-content a {
-    color: white;
-    padding: 30px 16px;
-	text-align: center;
-    text-decoration: none;
-    display: block;
-	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-	font-size: 24px;
-	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+  color: white;
+  padding: 30px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size: 24px;
+  font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
 }
 
 .dropdown-content a:hover {
-	background-color: #ffffff;
-	color: black;
+  background-color: #ffffff;
+  color: black;
 }
 
 .dropdown .dropdown-content.show {
-    display: block;
+  display: block;
 }
 
 .dropdown:hover .dropbtn {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
