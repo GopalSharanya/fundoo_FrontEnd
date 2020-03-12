@@ -161,7 +161,19 @@ $('#iconsbekku').load('icons.html');
                           out+=  '<span class=" io colloborator"  title="colloborator" id="'+response.data[i]._id+'" ><i class="foot  fa fa-user-plus"></i> </span>'
                           out+= '<span class=" io archiveMadu"  title="archive" id="'+response.data[i]._id+'" ><i class="foot fa fa-arrow-circle-o-down"></i> </span>'
                           out+= '<span class=" io addPicture"  title="addPicture" id="'+response.data[i]._id+'" ><i class="foot fa fa-picture-o" title="add picture" ></i> </span>'
+
+                          // DROP-DOWN MENU FOR MORE 
+                          out+= '<div class="btn-group dropright">'
                           out+= '<span class=" io more"  title="More" id="'+response.data[i]._id+'" ><i class="foot fa fa-ellipsis-v"></i> </span>'
+                          out+= ' <div class="dropdown-menu">'
+                          out+= '<a class="dropdown-item" href="#">Action</a>'
+                          out+= '<a class="dropdown-item" href="#">Action</a>'
+                          out+= '</div>'
+                          out+= '</div>'
+
+
+
+
                           out+= '</div>'
                           out+= '</div>'
 
@@ -239,6 +251,9 @@ $('#iconsbekku').load('icons.html');
                       $( function() {
                          $( "#dialog" ).dialog();
                                 } );
+
+                                var diBox = '<div id="dialog" >'
+
                                   })
                   },
                   error: function (jqXHR, textStatus, err) {
