@@ -146,10 +146,10 @@ $('#iconsbekku').load('icons.html');
                     out+= '<div class="modifiySavedNotes">'
                     out+= '<div class="iconsdu" data-toggle="modal" data-target="#myModal">'
                     out+= '  <div class="card cc">'
-                    out+= '<div class="card-title titletext yoyoy" id='+response.data[i].title+'>'
+                    out+= '<div class="card-title titletext " id='+response.data[i].title+'>'
                     out+= response.data[i].title
                     out+= ' </div>'
-                    out+= ' <div class="card-text  maintext" dissc='+response.data[i].discription+'>'
+                    out+= ' <div class="card-text  maintext" id='+response.data[i].discription+'>'
                     out+= response.data[i].discription
                     out+= '</div>'
                     out+= '<div id="icons"></div>'
@@ -234,7 +234,9 @@ $('#iconsbekku').load('icons.html');
 
                     // DIALOG BOX TO EDIT TITLE DISCRIPTION
                     $('.notes3').click(function(){
-                      console.log("clikkkkkkkkkkked DIALOG BOX",document.getElementsByClassName("yoyoy")[0].id)
+                      var iiiid= document.getElementsByClassName("titletext")[1].id.innerText;
+                      // var sssw = document.getElementsByClass("titletext")[1].id;
+                      console.log("clikkkkkkkkkkked DIALOG BOX",document.getElementsByClassName("maintext")[1].innerText)
                       $( function() {
                          $( "#dialog" ).dialog();
                                 } );
@@ -243,11 +245,7 @@ $('#iconsbekku').load('icons.html');
                   error: function (jqXHR, textStatus, err) {
                       alert('text status ' + textStatus + ', err ' + err)
                   }
-
-              })
-
-
-        
+              })       
         })
         
                 
