@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1,
@@ -23,31 +24,27 @@
 
 
     <script>
-          $(document).ready(function() {
-        $('#takeaNote').load('takeaNote.html');
+    $(document).ready(function () {
+      $('#takeaNote').load('takeaNote.html');
     });
-          </script>
-    <script>
-    $(document).ready(function() {
-  $('#savedNotes').load('displayNote.html');
-});
-    </script>
-
-
-
-    <script>
-  $(document).ready(function() {
-$('#iconsbekku').load('icons.html');
-});
   </script>
-
-
+    <script>
+    $(document).ready(function () {
+      $('#savedNotes').load('displayNote.html');
+    });
+  </script>
+    <script>
+    $(document).ready(function () {
+      $('#iconsbekku').load('icons.html');
+    });
+  </script>
     <link rel="stylesheet" href="dashbord.css">
     <link rel="shortcut icon"
       href="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png"
       type="image/x-icon">
     <title>FuNdooo</title>
   </head>
+
   <body>
     <!-- navigation bar-->
     <div class="navigationBar">
@@ -77,8 +74,8 @@ $('#iconsbekku').load('icons.html');
             <div>
               <img
                 src="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png"
-                width: 40px; height: 40px; class="d-inline-block align-top"
-                alt="">
+                width: 40px; height: 40px;
+                class="d-inline-block align-top" alt="">
             </div>
             <div class="keep">
               Keep
@@ -96,8 +93,8 @@ $('#iconsbekku').load('icons.html');
           <div class="signoutdropdown">
             <li class="nav-item avatar dropdown">
               <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-5"
-                data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
+                data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
                 <img src="" class="rounded-circle z-depth-0" alt="avatar image">
               </a>
               <div class="dropdown-menu dropdown-menu-left"
@@ -123,176 +120,176 @@ $('#iconsbekku').load('icons.html');
 
       <!--SAVED NOTES-->
       <script>
-          
-        $(function($){
-          $.ajax({
-                  url: 'http://localhost:4500/note/getNotes',
-                  type: 'POST',
-                  data: JSON.stringify({
-                    email : localStorage.getItem("email"),
-                    headers: {"token": localStorage.getItem("token")}
-                  }),
-                  processData: false,
-                  contentType: 'application/json',
-                  success: function (response) {
-                    console.log("*****************************************",response)
-                    for(var i=0; i<response.data.length; i++){
-                     $.each(response.data[i], function(key,value){
-                       if(key == "title" && response.data[i].isArchive != true && response.data[i].isTrash != true){
-                    var out = ' <div class="notes3">'
-                    out+= '<div class="modifiySavedNotes">'
-                    out+= '<div class="iconsdu" data-toggle="modal" data-target="#myModal">'
-                    out+= '  <div class="card cc">'
-                    out+= '<div class="card-title titletext " id='+response.data[i].title+'>'
-                    out+= response.data[i].title
-                    out+= ' </div>'
-                    out+= ' <div class="card-text  maintext" id='+response.data[i].discription+'>'
-                    out+= response.data[i].discription
-                    out+= '</div>'
-                    out+= '<div id="icons"></div>'
 
-                      //for icons  
-                          out+= ' <div class="footericons">'
-                          out+= '<div class="firstfour">'
-                          out+=  '<span class=" io reminder"  title="reminder" id="'+response.data[i]._id+'" ><i class="foot fa fa-bell"></i> </span>'
-                          out+=  '<span class=" io colloborator"  title="colloborator" id="'+response.data[i]._id+'" ><i class="foot  fa fa-user-plus"></i> </span>'
-                          out+= '<span class=" io archiveMadu"  title="archive" id="'+response.data[i]._id+'" ><i class="foot fa fa-arrow-circle-o-down"></i> </span>'
-                          out+= '<span class=" io addPicture"  title="addPicture" id="'+response.data[i]._id+'" ><i class="foot fa fa-picture-o" title="add picture" ></i> </span>'
+      $(function ($) {
+        $.ajax({
+          url: 'http://localhost:4500/note/getNotes',
+          type: 'POST',
+          data: JSON.stringify({
+            email: localStorage.getItem("email"),
+            headers: { "token": localStorage.getItem("token") }
+          }),
+          processData: false,
+          contentType: 'application/json',
+          success: function (response) {
+            console.log("*****************************************", response)
+            for (var i = 0; i < response.data.length; i++) {
+              $.each(response.data[i], function (key, value) {
+                if (key == "title" && response.data[i].isArchive != true && response.data[i].isTrash != true) {
+                  var out = ' <div class="notes3">'
+                  out += '<div class="modifiySavedNotes">'
+                  out += '<div class="iconsdu" data-toggle="modal" data-target="#myModal">'
+                  out += '  <div class="card cc">'
+                  out += '<div class="card-title titletext " id=' + response.data[i].title + '>'
+                  out += response.data[i].title
+                  out += ' </div>'
+                  out += ' <div class="card-text  maintext" id=' + response.data[i].discription + '>'
+                  out += response.data[i].discription
+                  out += '</div>'
+                  out += '<div id="icons"></div>'
 
-                          // DROP-DOWN MENU FOR MORE 
-                          // out+= '<div class="btn-group dropright">'
-                          // out+= '<span class=" io "  title="More" id="'+response.data[i]._id+'" ><i class="foot fa fa-ellipsis-v"></i> </span>'
-                        
-                        
-                        
-                        
-                         out+=  '<div class="dropdown ">'
-                          out+=   '<i class="foot fa fa-ellipsis-v" id="foot" ></i>'  
-                          out+=  '<div class="dropdown-content">'
-                            out+=   '<a href="#">DELETE</a>'
-                            out+=    '<a href="#">EDIT LABEL</a>'
-                            out+=   '</div>'
-                            out+=   '</div>'
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                          // out+= ' <div class="dropdown-menu">'
-                          // out+= '<a class="dropdown-item" href="#">Action</a>'
-                          // out+= '<a class="dropdown-item" href="#">Action</a>'
-                          // out+= '</div>'
-                          // out+= '</div>'
+                  //for icons  
+                  out += ' <div class="footericons">'
+                  out += '<div class="firstfour">'
+                  out += '<span class=" io reminder"  title="reminder" id="' + response.data[i]._id + '" ><i class="foot fa fa-bell"></i> </span>'
+                  out += '<span class=" io colloborator"  title="colloborator" id="' + response.data[i]._id + '" ><i class="foot  fa fa-user-plus"></i> </span>'
+                  out += '<span class=" io archiveMadu"  title="archive" id="' + response.data[i]._id + '" ><i class="foot fa fa-arrow-circle-o-down"></i> </span>'
+                  out += '<span class=" io addPicture"  title="addPicture" id="' + response.data[i]._id + '" ><i class="foot fa fa-picture-o" title="add picture" ></i> </span>'
+
+                  // DROP-DOWN MENU FOR MORE 
+                  // out+= '<div class="btn-group dropright">'
+                  // out+= '<span class=" io "  title="More" id="'+response.data[i]._id+'" ><i class="foot fa fa-ellipsis-v"></i> </span>'
 
 
 
 
-                          out+= '</div>'
-                          out+= '</div>'
-
-                          out+= '</div>'
-                          out+= ''
-                    out+= '</div>'
-                    out+= ' </div>'
-                    out+= ' </div>'
-                    out+= '</div> '
-                    out+= ' </div> '
-                    out+= ' </div> '
+                  out += '<div class="dropdown ">'
+                  out += '<i class="foot fa fa-ellipsis-v" id="foot" ></i>'
+                  out += '<div class="dropdown-content">'
+                  out += '<a href="#">DELETE</a>'
+                  out += '<a href="#">EDIT LABEL</a>'
+                  out += '</div>'
+                  out += '</div>'
 
 
-            $('#writingHere').append(out);
-         
-     
-                       }
-                       
-                    })
-                    
-                    }
-                    // TO ARCHIVE
-
-                    $('.archiveMadu').click(function(){
-                      console.log("XXXXXXXXXX", this.id)
-                      data= JSON.stringify({
-                        _id : this.id,
-                        archive : true,
-                        headers: {"token": localStorage.getItem("token")}
-                      })
-                      console.log(data,"%%%%%%%%%%%%%%%%%%%%%%%%%")
-                      $.ajax({
-                        url: 'http://localhost:4500/note/toArchive',
-                        type: 'POST',
-                        data: data,
-                        processData: false,
-                  contentType: 'application/json',
-                        success : function(data){
-                          alert("archived",data);
-                        },
-                        error: function(){
-                          alert("error in archiving");
-                        }
-                      })
-                    })
-
-                    // TO DELETE
-                    $('.more').click(function(){
-                      console.log("XXXXXXXXXX", this.id)
-                      data= JSON.stringify({
-                        _id : this.id,
-                        archive : true,
-                        headers: {"token": localStorage.getItem("token")}
-                      })
-                      console.log(data,"%%%%%%%%%%%%%%%%%%%%%%%%%")
-                      $.ajax({
-                        url: 'http://localhost:4500/note/toTrash',
-                        type: 'POST',
-                        data: data,
-                        processData: false,
-                  contentType: 'application/json',
-                        success : function(data){
-                          alert("deleted",data);
-                        },
-                        error: function(){
-                          alert("error in archiving");
-                        }
-                      })
-                    })
 
 
-                    // DIALOG BOX TO EDIT TITLE DISCRIPTION
-                    $('.notes3').click(function(){
-                    
-                      console.log("clikkkkkkkkkkked DIALOG BOX",document.getElementsByClassName("maintext")[1].innerText)
-                      $( function() {
-                         $( "#dialog" ).dialog();
-                                } );
 
-                                var diBox = '<div id="dialog" >'
 
-                                  })
-                  },
-                  error: function (jqXHR, textStatus, err) {
-                      alert('text status ' + textStatus + ', err ' + err)
-                  }
-              })       
+
+
+
+                  // out+= ' <div class="dropdown-menu">'
+                  // out+= '<a class="dropdown-item" href="#">Action</a>'
+                  // out+= '<a class="dropdown-item" href="#">Action</a>'
+                  // out+= '</div>'
+                  // out+= '</div>'
+
+
+
+
+                  out += '</div>'
+                  out += '</div>'
+
+                  out += '</div>'
+                  out += ''
+                  out += '</div>'
+                  out += ' </div>'
+                  out += ' </div>'
+                  out += '</div> '
+                  out += ' </div> '
+                  out += ' </div> '
+
+
+                  $('#writingHere').append(out);
+
+
+                }
+
+              })
+
+            }
+            // TO ARCHIVE
+
+            $('.archiveMadu').click(function () {
+              console.log("XXXXXXXXXX", this.id)
+              data = JSON.stringify({
+                _id: this.id,
+                archive: true,
+                headers: { "token": localStorage.getItem("token") }
+              })
+              console.log(data, "%%%%%%%%%%%%%%%%%%%%%%%%%")
+              $.ajax({
+                url: 'http://localhost:4500/note/toArchive',
+                type: 'POST',
+                data: data,
+                processData: false,
+                contentType: 'application/json',
+                success: function (data) {
+                  alert("archived", data);
+                },
+                error: function () {
+                  alert("error in archiving");
+                }
+              })
+            })
+
+            // TO DELETE
+            $('.more').click(function () {
+              console.log("XXXXXXXXXX", this.id)
+              data = JSON.stringify({
+                _id: this.id,
+                archive: true,
+                headers: { "token": localStorage.getItem("token") }
+              })
+              console.log(data, "%%%%%%%%%%%%%%%%%%%%%%%%%")
+              $.ajax({
+                url: 'http://localhost:4500/note/toTrash',
+                type: 'POST',
+                data: data,
+                processData: false,
+                contentType: 'application/json',
+                success: function (data) {
+                  alert("deleted", data);
+                },
+                error: function () {
+                  alert("error in archiving");
+                }
+              })
+            })
+
+
+            // DIALOG BOX TO EDIT TITLE DISCRIPTION
+            $('.notes3').click(function () {
+
+              console.log("clikkkkkkkkkkked DIALOG BOX", document.getElementsByClassName("maintext")[1].innerText)
+              $(function () {
+                $("#dialog").dialog();
+              });
+
+              var diBox = '<div id="dialog" >'
+
+            })
+          },
+          error: function (jqXHR, textStatus, err) {
+            alert('text status ' + textStatus + ', err ' + err)
+          }
         })
-        
-                
-        </script>
+      })
+
+
+    </script>
       <!--script for side navigation bar-->
       <script>
-        closeNav();
+      closeNav();
       function openNav() {
         document.getElementById("mySidenav").style.width = "200px";
       }
-      
+
       function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
       }
-      </script>
+    </script>
       <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
       crossorigin="anonymous"></script>     -->
@@ -308,4 +305,5 @@ $('#iconsbekku').load('icons.html');
         crossorigin="anonymous"></script>
 
     </body>
+
   </html>
