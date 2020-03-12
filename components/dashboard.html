@@ -103,6 +103,28 @@
 
 
 
+<!-- Modal FOR DIALOG BOX -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
     <!--SAVED NOTES-->
     <script>
 
@@ -121,14 +143,14 @@
             for (var i = 0; i < response.data.length; i++) {
               $.each(response.data[i], function (key, value) {
                 if (key == "title" && response.data[i].isArchive != true && response.data[i].isTrash != true) {
-                  var out = ' <div class="notes3" data-toggle="modal" data-target="#myModal">'
-                  out += '<div class="modifiySavedNotes" data-toggle="modal" data-target="#myModal">'
-                  out += '<div class="iconsdu" data-toggle="modal" data-target="#myModal">'
+                  var out = ' <div class="notes3">'
+                  out += '<div class="modifiySavedNotes">'
+                  out += '<div class="iconsdu">'
                   out += '  <div class="card cc">'
-                  out += '<div class="card-title titletext myBtn " id=' + response.data[i].title + '>'
+                  out += '<div data-toggle="modal" data-target="#exampleModalCenter" class="card-title titletext myBtn " id=' + response.data[i].title + '>'
                   out += response.data[i].title
                   out += ' </div>'
-                  out += ' <div class="card-text  maintext myBtn" id=' + response.data[i].discription + '>'
+                  out += ' <div class="card-text  maintext myBtn" id=' + response.data[i].discription + ' >'
                   out += response.data[i].discription
                   out += '</div>'
                   out += '<div id="icons"></div>'
@@ -235,23 +257,6 @@
     </script>
 
 
-
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-
-          </div>
-          <div class="modal-body">...</div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
 
 
