@@ -15,6 +15,11 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <!--DIALOG BOX FOR EDIT CARDS-->
 
+
+
+
+
+
   <!--LOAD TAKE A NOTE-->
   <script>
     $(document).ready(function () {
@@ -110,42 +115,101 @@
 
 
 
+
+
+
     <!-- Modal FOR DIALOG BOX -->
 
     <a href="#"></a>
-    <div id="dialog">
-      <div class="textBox2" id="largeOne dialog">
-        <div class="cardsss">
-          <div class="card-title">
-            <input type="text" class="takeanote titttle" name="getTitle" id="getTitle" placeholder="  title.."
-              style="overflow: hidden"></input>
-          </div>
-          <div class="card-text">
-            <div class="iconnn">
+    <div class="textBox2" id="largeOne dialog">
 
-              <input type="text" class="takeanote discriptionn" name="getDis" id="getDis"
-                placeholder="  discription.."></input>
-              <div class="iconandbutton">
-                <div id="iconsbekku"></div>
-                <div class="buttonclass">
-                  <button type="button" id="closebutton" class=" closebutton oooo text-dark">close</button>
-                </div>
+      <div class="cardsss" id="dialog">
+        <div class="card-title" id="rat">
+          <input type="text" class="takeanote titttle " name="getTitle" id="getTitle rat" placeholder="  title.."
+            style="overflow: hidden"></input>
+        </div>
+        <div class="card-text">
+          <div class="iconnn" >
+            <div id="cat">
+            <input type="text" class="takeanote discriptionn  kop " name="getDis" id="getDis cat"
+              placeholder="  discription.."></input>
+            </div>
+            <div class="iconandbutton">
+              <div id="iconsbekku"></div>
+              <div class="buttonclass">
+                <button type="button"  class=" updateButton oooo text-dark">UPDATE</button>
               </div>
             </div>
           </div>
-         <div class="withicons">
-            <div id="iconsbekku"></div>
-          </div>
+        </div>
+        <div class="withicons">
+          <div id="iconsbekku"></div>
         </div>
       </div>
     </div>
+  </div>
+
+
+
+  <!--UPDATE NOTES-->
+  
+
+  <script>
+
+      $(document).ready(function(){
+
+        $(".updateButton").click(function(){
+          event.preventDefault();
+          var title = $(".takeanote").val().trim();
+                  var discription = $(".takeanote").val().trim();
+         console.log("fromm SCRIPTTT",title,"DIS",discription,">>>>>>>>>>>>>>>>>>>>",this.id);
+
+          if(title != "" && discription != ""){
+            $.ajax({
+            url: 'http://localhost:4500/note/updateNotes',
+            type: 'PUT',
+            data: JSON.stringify({
+
+              discription : discription,
+              title : title,
+              headers: {"token": localStorage.getItem("token")}
+            }),
+            processData: false,
+            contentType: 'application/json',
+            success: function (data) {
+              console.log(data," DATA BACK FROM BACKEND @@@@@@");
+
+                alert('ADDED:)')
+            },
+            error: function (jqXHR, textStatus, err) {
+                alert('text status ' + textStatus + ', err ' + err)
+            }
+
+        })
+          }
+          else{
+            alert("title or discription can't be empty!!")
+          }
+
+        })
+      })     
+  </script>
+
+
+  <!--22222222222222222222222222222222222222222222222222222222222222222222222222222222222222-->
+  <div id="container">
+    <div class="buttons">
+      <button class="grid">Grid View</button>
+      <button class="list">List View</button>
+    </div>
+    <!--22222222222222222222222222222222222222222222222222222222222222222222222222222222222222-->
 
 
 
 
     <!--SAVED NOTES-->
     <script>
-
+      var notes = [];
       $(function ($) {
         $.ajax({
           url: 'http://localhost:4500/note/getNotes',
@@ -158,12 +222,20 @@
           contentType: 'application/json',
           success: function (response) {
             console.log("*****************************************", response)
+            notes = response.data;
+            var out = '<div id="container">'
+            out += '<div class="buttons">'
+            out += '<button class="grid">Grid View</button>'
+            out += '<button class="list">List View</button>'
+            out += ' </div>'
+            out += '<ul class="list">'
             for (var i = 0; i < response.data.length; i++) {
               $.each(response.data[i], function (key, value) {
                 if (key == "title" && response.data[i].isArchive != true && response.data[i].isTrash != true) {
-                  var out = ' <div class="notes3">'
+                  out = ' <div class="notes3">'
                   out += '<div class="modifiySavedNotes">'
-                  out += '<div class="iconsdu">'
+                  out += '<li>'
+                  out += '<div class="iconsdu" id="' + response.data[i]._id + '">'
                   out += '  <div class="card cc">'
                   out += '<div   class="card-title titletext   " id=' + response.data[i].title + '>'
                   out += response.data[i].title
@@ -192,7 +264,9 @@
                   out += ' <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">'
                   out += ' <a class="dropdown-item" href=""> DELETE </a>'
                   out += '</div>'
+                  out += '</li>'
                   out += '</div>'
+
 
 
 
@@ -201,20 +275,61 @@
               })
             }
 
+            out += '</ul>'
+            out += '</div>'
+
 
 
             //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! LOAD DIALOG BOX  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
             $(function () {
-              $("#dialog").dialog({
-                autoOpen: false, modal: true, show: "blind", hide: "blind"
-              });
+              var got;
+              $(".iconsdu").click(function () {
 
-              $(".titletext").click(function () {
+                console.log("XXXXXXXXXX", this.id)
+                console.log(document.getElementById("rat"));
+                
+                for(let i=0; i<notes.length; i++){
+                  if(notes[i]._id === this.id){
+                    got = notes[i]
+
+                    $("#dialog").dialog(
+                {
+                  autoOpen: false, modal: true, show: "blind", hide: "blind",
+                  create: function() {
+                    document.getElementById("rat").innerHTML = got.title;
+                    document.getElementById("cat").innerHTML = got.discription;
+                    document.getElementsByClassName("updateButton").id = got._id
+                    $("#cat").get(0).contentEditable = "true";                 
+                    $("#rat").get(0).contentEditable = "true";                 
+
+                    
+                     }
+                    
+                });
+                
+
+
+                  }
+                }
+
                 $("#dialog").dialog("open");
                 return false;
-              });
+               
+              })
+
+              
+
+              // $(".titletext").click(function () {
+              //   console.log("LLLLLLLLLLLLLLL",  got)
+              //   document.getElementById("rat").innerHTML = got.title;
+              //   document.getElementById("cat").innerHTML = got.discription;
+              //   $("#dialog").dialog("open");
+              //   return false;
+              // });
             });
+
+
             //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
@@ -279,6 +394,35 @@
         })
       })
     </script>
+
+
+
+
+
+    <script>
+
+      $('.grid').click(function (e) {
+        if ($(this).hasClass('grid')) {
+          $('#container ul').removeClass('list').addClass('grid');
+        }
+        else if ($(this).hasClass('list')) {
+          $('#container ul').removeClass('grid').addClass('list');
+        }
+      });
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
