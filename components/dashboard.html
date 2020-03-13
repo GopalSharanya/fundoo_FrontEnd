@@ -15,24 +15,27 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <!--DIALOG BOX FOR EDIT CARDS-->
 
-
+  <!--LOAD TAKE A NOTE HTML-->
   <script>
     $(document).ready(function () {
       $('#takeaNote').load('takeaNote.html');
     });
   </script>
-  <script>
-    $(document).ready(function () {
-      $('#savedNotes').load('displayNote.html');
-    });
-  </script>
+
+
+  <!--LOAD ICONS FROM ICONS HTML-->
   <script>
     $(document).ready(function () {
       $('#iconsbekku').load('icons.html');
     });
   </script>
+
+  <!--LOAD CSS FROM DASHBOARD CSS-->
   <link rel="stylesheet" href="dashbord.css">
   <link rel="shortcut icon" href="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png" type="image/x-icon">
+
+
+  <!--TITLE-->
   <title>FuNdooo</title>
 </head>
 
@@ -101,7 +104,7 @@
     <!--Saved Notes-->
     <div id="writingHere"></div>
 
-  
+
 
 
 
@@ -111,11 +114,42 @@
 
     <!-- Modal FOR DIALOG BOX -->
 
-    <a href="#" ></a>                   
-    <div id="dialog" title="Contact form">
-      <p>appear now</p>
-    </div>
+    <a href="#"></a>
+    <div id="dialog">
+      <div class="textBox2" id="largeOne dialog">
+        <div class="cardsss">
+          <div class="card-title">
+            <input type="text" class="takeanote titttle" name="getTitle" id="getTitle" placeholder="  title.."
+              style="overflow: hidden"></input>
+          </div>
+          <div class="card-text">
+            <div class="iconnn">
 
+              <input type="text" class="takeanote discriptionn" name="getDis" id="getDis"
+                placeholder="  discription.."></input>
+              <div class="iconandbutton">
+                <div id="iconsbekku"></div>
+
+
+
+                <div class="buttonclass">
+                  <button type="button" id="closebutton" class=" closebutton oooo text-dark">close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="withicons">
+
+            <div id="iconsbekku"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
 
 
 
@@ -142,7 +176,7 @@
                   out += '<div class="modifiySavedNotes">'
                   out += '<div class="iconsdu">'
                   out += '  <div class="card cc">'
-                  out += '<div   class="card-title titletext  " id=' + response.data[i].title + '>'
+                  out += '<div   class="card-title titletext   " id=' + response.data[i].title + '>'
                   out += response.data[i].title
                   out += ' </div>'
                   out += ' <div class="card-text  maintext " id=' + response.data[i].discription + ' >'
@@ -158,9 +192,9 @@
                   out += '<span class=" io archiveMadu"  title="archive" id="' + response.data[i]._id + '" ><i class="foot fa fa-arrow-circle-o-down"></i> </span>'
                   out += '<span class=" io addPicture"  title="addPicture" id="' + response.data[i]._id + '" ><i class="foot fa fa-picture-o" title="add picture" ></i> </span>'
 
+
+
                   // DROP-DOWN MENU FOR MORE                   out += '<i class="foot fa fa-ellipsis-v" id="foot" ></i>'
-
-
                   out += '<div class="dropdown">'
                   out += '<a  type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"'
                   out += '<i class="foot fa fa-ellipsis-v" id="foot" ></i>'
@@ -171,6 +205,7 @@
                   out += '</div>'
 
 
+
                   $('#writingHere').append(out);
 
 
@@ -179,29 +214,25 @@
               })
 
             }
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-            $(function() {
-  // this initializes the dialog (and uses some common options that I do)
-  $("#dialog").dialog({
-    autoOpen : false, modal : true, show : "blind", hide : "blind"
-  });
-
-  // next add the onclick handler
-  $(".titletext").click(function() {
-    $("#dialog").dialog("open");
-    return false;
-  });
-});
 
 
+            //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    dialog box open for dit notes   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+            $(function () {
+              $("#dialog").dialog({
+                autoOpen: false, modal: true, show: "blind", hide: "blind"
+              });
 
+              $(".titletext").click(function () {
+                $("#dialog").dialog("open");
+                return false;
+              });
+            });
 
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 
             // TO ARCHIVE
-
             $('.archiveMadu').click(function () {
               console.log("XXXXXXXXXX", this.id)
               data = JSON.stringify({
@@ -224,6 +255,7 @@
                 }
               })
             })
+
 
             // TO DELETE
             $('.more').click(function () {
@@ -250,23 +282,21 @@
             })
 
 
- 
+
+
+            // END OF SAVED NOTES AJAX
           },
           error: function (jqXHR, textStatus, err) {
             alert('text status ' + textStatus + ', err ' + err)
           }
         })
       })
-
-
- 
-
-
-
-
-
-
     </script>
+
+
+
+
+
     <!--script for side navigation bar-->
     <script>
       closeNav();
