@@ -15,7 +15,7 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <!--DIALOG BOX FOR EDIT CARDS-->
 
-  <!--LOAD TAKE A NOTE HTML-->
+  <!--LOAD TAKE A NOTE-->
   <script>
     $(document).ready(function () {
       $('#takeaNote').load('takeaNote.html');
@@ -23,20 +23,23 @@
   </script>
 
 
-  <!--LOAD ICONS FROM ICONS HTML-->
+  <!--LOAD ICONS -->
   <script>
     $(document).ready(function () {
       $('#iconsbekku').load('icons.html');
     });
   </script>
 
-  <!--LOAD CSS FROM DASHBOARD CSS-->
+  <!--ADD CSS FROM DASHVOARD CSS-->
   <link rel="stylesheet" href="dashbord.css">
-  <link rel="shortcut icon" href="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png" type="image/x-icon">
 
+  <!--TITLE BAR ICON-->
+  <link rel="shortcut icon" href="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png" type="image/x-icon">
 
   <!--TITLE-->
   <title>FuNdooo</title>
+
+
 </head>
 
 <body>
@@ -107,11 +110,6 @@
 
 
 
-
-
-
-
-
     <!-- Modal FOR DIALOG BOX -->
 
     <a href="#"></a>
@@ -129,26 +127,17 @@
                 placeholder="  discription.."></input>
               <div class="iconandbutton">
                 <div id="iconsbekku"></div>
-
-
-
                 <div class="buttonclass">
                   <button type="button" id="closebutton" class=" closebutton oooo text-dark">close</button>
                 </div>
               </div>
             </div>
           </div>
-
-          <div class="withicons">
-
+         <div class="withicons">
             <div id="iconsbekku"></div>
-
           </div>
-
         </div>
-
       </div>
-
     </div>
 
 
@@ -194,7 +183,8 @@
 
 
 
-                  // DROP-DOWN MENU FOR MORE                   out += '<i class="foot fa fa-ellipsis-v" id="foot" ></i>'
+
+                  // DROP-DOWN MENU FOR MORE                 
                   out += '<div class="dropdown">'
                   out += '<a  type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"'
                   out += '<i class="foot fa fa-ellipsis-v" id="foot" ></i>'
@@ -207,16 +197,13 @@
 
 
                   $('#writingHere').append(out);
-
-
                 }
-
               })
-
             }
 
 
-            //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    dialog box open for dit notes   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+            //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! LOAD DIALOG BOX  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
             $(function () {
               $("#dialog").dialog({
@@ -228,8 +215,9 @@
                 return false;
               });
             });
-
             //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
 
 
             // TO ARCHIVE
@@ -257,6 +245,7 @@
             })
 
 
+
             // TO DELETE
             $('.more').click(function () {
               console.log("XXXXXXXXXX", this.id)
@@ -282,9 +271,7 @@
             })
 
 
-
-
-            // END OF SAVED NOTES AJAX
+            //END OF SAVED NOTES AJAX
           },
           error: function (jqXHR, textStatus, err) {
             alert('text status ' + textStatus + ', err ' + err)
