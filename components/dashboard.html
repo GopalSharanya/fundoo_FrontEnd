@@ -124,20 +124,20 @@
     <div class="textBox2" id="largeOne dialog">
 
       <div class="cardsss" id="dialog">
-        <div class="card-title" id="rat">
-          <input type="text" class="takeanote titttle " name="getTitle" id="getTitle rat" placeholder="  title.."
-            style="overflow: hidden"></input>
+        <div class="card-title" >
+          <textarea  class="takeanote titttle  " name="getTitle" id="rat" placeholder="  title.."
+            style="overflow: hidden"></textarea>
         </div>
         <div class="card-text">
           <div class="iconnn" >
-            <div id="cat">
-            <input type="text" class="takeanote discriptionn  kop " name="getDis" id="getDis cat"
-              placeholder="  discription.."></input>
+            <div >
+            <textarea  class="takeanote discriptionn   kop " name="getDis" id="cat"
+              placeholder="  discription.."></textarea>
             </div>
             <div class="iconandbutton">
               <div id="iconsbekku"></div>
               <div class="buttonclass">
-                <button type="button"  class=" updateButton oooo text-dark">UPDATE</button>
+                <button type="button"  class="updateButton">UPDATE</button>
               </div>
             </div>
           </div>
@@ -153,46 +153,38 @@
 
   <!--UPDATE NOTES-->
   
-
   <script>
-
-      $(document).ready(function(){
-
-        $(".updateButton").click(function(){
-          event.preventDefault();
-          var title = $(".takeanote").val().trim();
-                  var discription = $(".takeanote").val().trim();
-         console.log("fromm SCRIPTTT",title,"DIS",discription,">>>>>>>>>>>>>>>>>>>>",this.id);
-
-          if(title != "" && discription != ""){
-            $.ajax({
-            url: 'http://localhost:4500/note/updateNotes',
-            type: 'PUT',
-            data: JSON.stringify({
-
-              discription : discription,
-              title : title,
-              headers: {"token": localStorage.getItem("token")}
-            }),
-            processData: false,
-            contentType: 'application/json',
-            success: function (data) {
-              console.log(data," DATA BACK FROM BACKEND @@@@@@");
-
-                alert('ADDED:)')
-            },
-            error: function (jqXHR, textStatus, err) {
-                alert('text status ' + textStatus + ', err ' + err)
-            }
-
-        })
-          }
-          else{
-            alert("title or discription can't be empty!!")
-          }
-
-        })
-      })     
+      $(document).ready(function () {
+          $(".updateButton").click(function () {
+               event.preventDefault();
+              // var ttit = $("#getTitle").html(); 
+              var ttit =  document.getElementById("cat").value
+              var diss =  document.getElementById("rat").value
+              console.log(ttit);
+              console.log(diss);
+              
+              if (ttit != "" && diss != "") {
+                  $.ajax({
+                      url: 'http://localhost:4500/note/updateNotes',
+                      type: 'PUT',
+                      data: JSON.stringify({
+                          title: ttit,
+                          discription: diss,
+                          headers: { "token": localStorage.getItem("token") }
+                      }),
+                      processData: false,
+                      contentType: 'application/json',
+                      success: function (data) {
+                          alert('Success!')
+                      },
+                      error: function (jqXHR, textStatus, err) {
+                          alert('text status ' + textStatus + ', err ' + err)
+                      }
+  
+                  })
+              }
+          });
+      });
   </script>
 
 
@@ -445,11 +437,13 @@
 
 
 
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"></script>     -->
+
+      <!-- <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script> -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-1.11.1.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
       integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
       crossorigin="anonymous"></script>
