@@ -65,6 +65,7 @@
   opacity: 0.54;
 }
 
+
 .sidenav {
   height: 100%;
   width: 175px;
@@ -157,15 +158,18 @@
   width: 630px;
 }
 
-.io {
-  padding-right: 10px;
-}
+ .io {
+  padding-left: 10px;
+} 
+
 .reminder {
   padding-left: 10px;
 }
 
 .cc {
-  height: 130px;
+  height: 141px;
+  max-height: 141px;
+  border-radius: 10px !important;
 }
 .fa {
   font-size: small !important;
@@ -206,6 +210,11 @@
 
 .iconsdu {
   width: 203%;
+}
+
+.firstfour{
+  display: flex;
+  justify-content:  space-evenly;
 }
 
 .card-text {
@@ -260,6 +269,10 @@
   background: none;
 }
 
+.iconsdu{
+  max-width: 208px;
+}
+
 .maintext {
   font-family: "Google Sans", Roboto, Arial, sans-serif;
   font-size: 1.5rem;
@@ -274,7 +287,7 @@
   white-space: pre-wrap;
   word-wrap: break-word;
   display: block;
-}
+} 
 
 .titletext {
   padding-top: 12px;
@@ -296,6 +309,15 @@
   unicode-bidi: isolate;
 }
 
+.titletext{
+  width: 207px;
+    height: 96px;
+}
+
+.maintext{
+  width: 207px;
+    height: 96px;
+}
 
 .dropdown-toggle::after {
   display: none;
