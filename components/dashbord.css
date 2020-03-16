@@ -324,7 +324,17 @@
 }
 
 .kop{
-  height: 101px;
+
+  width: -webkit-fill-available !important;
+  height: auto !important;
+}
+.buttonclass{
+  padding-left: 278px;
+}
+
+.fourico{
+  display: flex;
+  justify-content: space-around;
 }
 
 .ui-widget.ui-widget-content{
@@ -341,7 +351,10 @@
 
 
 
-
+.abc{
+  overflow: hidden;
+  width: -webkit-fill-available;
+}
 
 
 

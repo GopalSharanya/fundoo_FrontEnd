@@ -127,7 +127,7 @@
 
         <div class="cardsss" id="dialog">
           <div class="card-title">
-            <textarea class="takeanote titttle  " name="getTitle" id="rat" placeholder="  title.."
+            <textarea class="takeanote titttle abc " name="getTitle" id="rat" placeholder="  title.."
               style="overflow: hidden"></textarea>
           </div>
           <div class="card-text">
@@ -136,17 +136,26 @@
                 <textarea class="takeanote discriptionn   kop " name="getDis" id="cat"
                   placeholder="  discription.."></textarea>
               </div>
+              <div class="iconwithbutton">
               <div class="iconandbutton">
-                <div id="iconsbekku"></div>
+                  <div class="diaicon">
+                      <div class="fourico">
+                          <i class="foot fa qq fa-bell"></i>
+                          <i class="foot fa qq fa-user-plus"></i>
+                          <i class="foot fa qq fa-arrow-circle-o-down"></i>
+                          <i class="foot fa qq fa-picture-o"></i>
+                          <i class="foot fa qq fa-ellipsis-v"></i>
+                      </div>
+          
+          
                 <div class="buttonclass">
                   <button type="button" class="updateButton">UPDATE</button>
                 </div>
               </div>
             </div>
+            </div>
           </div>
-          <div class="withicons">
-            <div id="iconsbekku"></div>
-          </div>
+       
         </div>
       </div>
     </div>
@@ -244,7 +253,7 @@
                     //dropdown for color
                   out += '<div class="dropdown">'
                   out += '<a  type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"'
-                  out += '<i class="fa fa-tachometer"></i>'
+                  out += '<i title="color" class="fa fa-tachometer"></i>'
                   out += '</a>'
                   out += ' <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">'
                   out += ' <a class="dropdown-item" href=""> DELETE </a>'
@@ -260,26 +269,12 @@
                   // DROP-DOWN MENU FOR MORE                 
                   out += '<div class="dropdown">'
                   out += '<a  type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"'
-                  out += '<i class="foot fa fa-ellipsis-v" id="foot" ></i>'
+                  out += '<i title="more" class="foot fa fa-ellipsis-v" id="foot" ></i>'
                   out += '</a>'
                   out += ' <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">'
                   out += ' <a class="dropdown-item" href=""> DELETE </a>'
                   out += '</div>'
                   out += '</div>'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -322,7 +317,7 @@
 
           $(function () {
             var got;
-            $(".clickhere").click(function () {
+            $(".").click(function () {
 
               console.log("XXXXXXXXXX", this.id)
               console.log(document.getElementById("rat"));
@@ -420,8 +415,6 @@
       })
     })
   </script>
-
-
 
 
 
