@@ -331,6 +331,14 @@
 .buttonclass{
   padding-left: 278px;
 }
+.dropdown-item{
+  width: 30% !important
+}
+.colours{
+  display: flex;
+  width: 200px;
+  flex-wrap: wrap;
+}
 
 .fourico{
   display: flex;
@@ -358,17 +366,44 @@
 
 
 
+/*COLOURS*/
 
+.colour{
+  width: 20px;
+  height: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  margin: 5px
+}
 
+.colours{
+  display: flex;
+  width: 107px;
+  flex-wrap: wrap;
+}
 
+.one{
+  background-color: #FF0000
+}
 
+.two{
+  background-color: #7FFFD4;
+}
 
+.three{
+  background-color: #A52A2A
+}
 
-/* LIST AND GRID VEIW */
+.four{
+  background-color: #5F9EA0;
+}
 
-#container ul { list-style: none; }
-#container .buttons { margin-bottom: 20px; }
+.five{
+  background-color: #B8860B 
+}
 
-#container .list li { width: 100%; border-bottom: 1px dotted #CCC; margin-bottom: 10px; padding-bottom: 10px; }
+.six{
+  background-color: #20B2AA
+}
 
-#container .grid li { float: left; width: 20%; height: 50px; border-right: 1px dotted #CCC; border-bottom: 1px dotted #CCC; padding: 20px; }
