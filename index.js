@@ -52,6 +52,10 @@ app.get('/one.jpeg', function (req, res) {
     res.sendFile(path.join(__dirname + '../../../one.jpeg'));
 });
 
+app.get('/archive.html', function (req, res) {
+    res.sendFile(path.join(__dirname + '/components/archive.html'));
+});
+
 
 app.get('/takeaNote.html', function (req, res) {
     res.sendFile(path.join(__dirname + '/components/takeaNote.html'));

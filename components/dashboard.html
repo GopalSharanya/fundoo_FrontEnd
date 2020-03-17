@@ -71,7 +71,7 @@
                 <div class="dropdown-divider"></div>
                 <a  ><i class="fa iiii fa-pencil editLabels"></i>Edit Labels</a>
                 <div class="dropdown-divider"></div>
-                <a ><i class="fa iiii fa-arrow-circle-down archive"></i>Archive</a>
+                <a class="archive" ><i class="fa iiii fa-arrow-circle-down archive"></i>Archive</a>
                 <a ><i class="fa iiii fa-trash-o bin"></i>Bin</a>
               </div>
             </div>
@@ -110,6 +110,17 @@
     </nav>
 
 
+<!---------------------- SIDE NAV BAR------------------------------->
+
+<script>
+ $(document).ready(function () {
+        $(".archive").click(function () {
+          window.location = 'archive.html'
+        });
+    });
+
+
+</script>
 
 
 
@@ -122,7 +133,6 @@
 
 
 
-    
 
 
     <!--Take A Note-->
