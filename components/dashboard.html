@@ -231,20 +231,21 @@
               $.each(response.data[i], function (key, value) {
                 if (key == "title" && response.data[i].isArchive != true && response.data[i].isTrash != true) {
                   var out = ' <div class="notes3">'
+                  out+= '<div class="forcolor ' + response.data[i]._id + '">'
                   out += '<div class="modifiySavedNotes">'
-                  out += '<div class="iconsdu" id="' + response.data[i]._id + '">'
-                  out += '  <div class="card cc">'
-                  out += '<div   class="card-title titletext clickme" id=' + response.data[i].title + '>'
+                  out += '<div class="iconsdu " id="' + response.data[i]._id + '">'
+                  out += '  <div class="card cc ' + response.data[i]._id + '">'
+                  out += '<div   class="card-title titletext " id=' + response.data[i].title + '>'
                   out += response.data[i].title
                   out += ' </div>'
-                  out += ' <div class="card-text  maintext " id=' + response.data[i].discription + ' >'
+                  out += ' <div class="card-text  maintext  " id=' + response.data[i].discription + ' >'
                   out += response.data[i].discription
                   out += '</div>'
                   out += '<div id="icons"></div>'
 
                   //for icons  <i class="fa fa-tachometer"></i>
                   out += ' <div class="footericons">'
-                  out += '<div class="firstfour">'
+                  out += '<div class="firstfour ">'
                   out += '<span class=" io reminder"  title="reminder" id="' + response.data[i]._id + '" ><i class="foot fa fa-bell"></i> </span>'
                   out += '<span class=" io colloborator"  title="colloborator" id="' + response.data[i]._id + '" ><i class="foot  fa fa-user-plus"></i> </span>'
                   out += '<span class=" io archiveMadu"  title="archive" id="' + response.data[i]._id + '" ><i class="foot fa fa-arrow-circle-o-down"></i> </span>'
@@ -284,183 +285,189 @@
 
                   out += '</div>'
                   out += '</div>'
+                  out+= '</div>'
 
 
 
 
-   // GET COLOUR 
-   $(function ($) {
+                  // GET COLOUR CARD VISE
+                  $(document).ready(function () {
                     var colId = response.data[i]._id;
-                    console.log(colId)
-                    $.ajax({
-                      url: 'http://localhost:4500/note/getcolor',
-                      type: 'POST',
-                      data: JSON.stringify({
-                        email: localStorage.getItem("email"),
-                        _id: colId,
-                        headers: { "token": localStorage.getItem("token") }
-                      }),
-                      processData: false,
-                      contentType: 'application/json',
-                      success: function (response) {
-                        console.log(response,"PPPPPPPPPPPP")
-                        var col = response.data[0].color;
-                        console.log(col,"PPPPPPPP")
-                        $('.card').css({ 'background-color' : col });                      }
-                    })
-                  })
+                    var colmain =response.data[i].title;
+                    console.log("XXXXXXXXXX", response.data[i]._id);
+                      $.ajax({
+                        url: 'http://localhost:4500/note/getcolor',
+                        type: 'POST',
+                        data: JSON.stringify({
+                          _id: response.data[i]._id,
+                          headers: { "token": localStorage.getItem("token") }
 
-                 
+                        }),
+                        processData: false,
+                        contentType: 'application/json',
+                        success: function (res) {
+                            console.log(res.data[0]._id,"OOOOOOOO",colId)
+                            if(res.data[0]._id === colId)
+                            $("."+colId).css('background-color', res.data[0].color );
+                        },
+                        error: function (jqXHR, textStatus, err) {
+                          alert('text status ' + textStatus + ', err ' + err)
+                        }
+
+                      })
+                  });
 
 
 
-                 
 
                   $('#writingHere').append(out);
                 }
               })
             }
 
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! APPLY COLOR !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! APPLY COLOR !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-            $(function($){
-              $(".one").click(function(){
-               var colId = this.id;
+            $(function ($) {
+              $(".one").click(function () {
+                var colId = this.id;
+                color= "#FF0000";
                 console.log("XXXXXXXXXX", this.id);
                 $.ajax({
-                      url: 'http://localhost:4500/note/color',
-                      type: 'PUT',
-                      data: JSON.stringify({
-                        _id: colId,
-                        color: "#FF0000",
-                        headers: { "token": localStorage.getItem("token") }
-                      }),
-                      processData: false,
-                      contentType: 'application/json',
-                      success: function (response) {
-                        alert("color changed :)")
-                      }
-                    })
+                  url: 'http://localhost:4500/note/color',
+                  type: 'PUT',
+                  data: JSON.stringify({
+                    _id: colId,
+                    color: color,
+                    headers: { "token": localStorage.getItem("token") }
+                  }),
+                  processData: false,
+                  contentType: 'application/json',
+                  success: function (response) {
+                    console.log(response, "response");
+
+                    alert("color changed :)")
+                  }
+                })
               })
             })
 
 
-            $(function($){
-              $(".two").click(function(){
-               var colId = this.id;
+            $(function ($) {
+              $(".two").click(function () {
+                var colId = this.id;
                 console.log("XXXXXXXXXX", this.id);
                 $.ajax({
-                      url: 'http://localhost:4500/note/color',
-                      type: 'PUT',
-                      data: JSON.stringify({
-                        _id: colId,
-                        color: "#7FFFD4",
-                        headers: { "token": localStorage.getItem("token") }
-                      }),
-                      processData: false,
-                      contentType: 'application/json',
-                      success: function (response) {
-                        alert("color changed :)")
-                      }
-                    })
+                  url: 'http://localhost:4500/note/color',
+                  type: 'PUT',
+                  data: JSON.stringify({
+                    _id: colId,
+                    color: "#7FFFD4",
+                    headers: { "token": localStorage.getItem("token") }
+                  }),
+                  processData: false,
+                  contentType: 'application/json',
+                  success: function (response) {
+                    alert("color changed :)")
+                  }
+                })
               })
             })
 
-            $(function($){
-              $(".three").click(function(){
-               var colId = this.id;
+            $(function ($) {
+              $(".three").click(function () {
+                var colId = this.id;
                 console.log("XXXXXXXXXX", this.id);
                 $.ajax({
-                      url: 'http://localhost:4500/note/color',
-                      type: 'PUT',
-                      data: JSON.stringify({
-                        _id: colId,
-                        color: "#A52A2A",
-                        headers: { "token": localStorage.getItem("token") }
-                      }),
-                      processData: false,
-                      contentType: 'application/json',
-                      success: function (response) {
-                        alert("color changed :)")
-                      }
-                    })
-              })
-            })
-
-
-
-            $(function($){
-              $(".four").click(function(){
-               var colId = this.id;
-                console.log("XXXXXXXXXX", this.id);
-                $.ajax({
-                      url: 'http://localhost:4500/note/color',
-                      type: 'PUT',
-                      data: JSON.stringify({
-                        _id: colId,
-                        color: "#5F9EA0",
-                        headers: { "token": localStorage.getItem("token") }
-                      }),
-                      processData: false,
-                      contentType: 'application/json',
-                      success: function (response) {
-                        alert("color changed :)")
-                      }
-                    })
-              })
-            })
-
-
-            $(function($){
-              $(".five").click(function(){
-               var colId = this.id;
-                console.log("XXXXXXXXXX", this.id);
-                $.ajax({
-                      url: 'http://localhost:4500/note/color',
-                      type: 'PUT',
-                      data: JSON.stringify({
-                        _id: colId,
-                        color: "#B8860B",
-                        headers: { "token": localStorage.getItem("token") }
-                      }),
-                      processData: false,
-                      contentType: 'application/json',
-                      success: function (response) {
-                        alert("color changed :)")
-                      }
-                    })
-              })
-            })
-
-
-            $(function($){
-              $(".six").click(function(){
-               var colId = this.id;
-                console.log("XXXXXXXXXX", this.id);
-                $.ajax({
-                      url: 'http://localhost:4500/note/color',
-                      type: 'PUT',
-                      data: JSON.stringify({
-                        _id: colId,
-                        color: "#20B2AA",
-                        headers: { "token": localStorage.getItem("token") }
-                      }),
-                      processData: false,
-                      contentType: 'application/json',
-                      success: function (response) {
-                        alert("color changed :)")
-                      }
-                    })
+                  url: 'http://localhost:4500/note/color',
+                  type: 'PUT',
+                  data: JSON.stringify({
+                    _id: colId,
+                    color: "#A52A2A",
+                    headers: { "token": localStorage.getItem("token") }
+                  }),
+                  processData: false,
+                  contentType: 'application/json',
+                  success: function (response) {
+                    alert("color changed :)")
+                  }
+                })
               })
             })
 
 
 
+            $(function ($) {
+              $(".four").click(function () {
+                var colId = this.id;
+                console.log("XXXXXXXXXX", this.id);
+                $.ajax({
+                  url: 'http://localhost:4500/note/color',
+                  type: 'PUT',
+                  data: JSON.stringify({
+                    _id: colId,
+                    color: "#5F9EA0",
+                    headers: { "token": localStorage.getItem("token") }
+                  }),
+                  processData: false,
+                  contentType: 'application/json',
+                  success: function (response) {
+                    alert("color changed :)")
+                  }
+                })
+              })
+            })
+
+
+            $(function ($) {
+              $(".five").click(function () {
+                var colId = this.id;
+                console.log("XXXXXXXXXX", this.id);
+                $.ajax({
+                  url: 'http://localhost:4500/note/color',
+                  type: 'PUT',
+                  data: JSON.stringify({
+                    _id: colId,
+                    color: "#B8860B",
+                    headers: { "token": localStorage.getItem("token") }
+                  }),
+                  processData: false,
+                  contentType: 'application/json',
+                  success: function (response) {
+                    alert("color changed :)")
+                  }
+                })
+              })
+            })
+
+
+            $(function ($) {
+              $(".six").click(function () {
+                var colId = this.id;
+                console.log("XXXXXXXXXX", this.id);
+                $.ajax({
+                  url: 'http://localhost:4500/note/color',
+                  type: 'PUT',
+                  data: JSON.stringify({
+                    _id: colId,
+                    color: "#20B2AA",
+                    headers: { "token": localStorage.getItem("token") }
+                  }),
+                  processData: false,
+                  contentType: 'application/json',
+                  success: function (response) {
+                    alert("color changed :)")
+                  }
+                })
+              })
+            })
 
 
 
 
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+            //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 

@@ -377,6 +377,10 @@
   margin: 5px
 }
 
+.forcolor{
+  border-radius: 20px;
+}
+
 .colours{
   display: flex;
   width: 107px;
