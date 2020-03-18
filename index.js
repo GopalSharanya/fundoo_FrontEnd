@@ -56,6 +56,10 @@ app.get('/archive.html', function (req, res) {
     res.sendFile(path.join(__dirname + '/components/archive.html'));
 });
 
+app.get('/binn.html', function (req, res) {
+    res.sendFile(path.join(__dirname + '/components/binn.html'));
+});
+
 
 app.get('/takeaNote.html', function (req, res) {
     res.sendFile(path.join(__dirname + '/components/takeaNote.html'));

@@ -4,18 +4,31 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1,
-            shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-    <link rel="stylesheet" href="./dashbord.css">
-    <link rel="shortcut icon" href="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png"
-        type="image/x-icon">
+    <!--CDN FOR DIALOG BOX EDIT CARDS-->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-    <title>achive-notes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--DIALOG BOX FOR EDIT CARDS-->
 
- 
+
+
+
+
+
+
+    <!--LOAD TAKE A NOTE-->
+    <script>
+        $(document).ready(function () {
+            $('#takeaNote').load('takeaNote.html');
+        });
+    </script>
 
 
     <!--LOAD ICONS -->
@@ -25,11 +38,22 @@
         });
     </script>
 
+    <!--ADD CSS FROM DASHVOARD CSS-->
+    <link rel="stylesheet" href="dashbord.css">
+
+    <!--TITLE BAR ICON-->
+    <link rel="shortcut icon" href="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png"
+        type="image/x-icon">
+
+    <!--TITLE-->
+    <title>FuNdooo</title>
+
+
+
+
 </head>
 
 <body>
-
-
 
     <!-- navigation bar-->
     <div class="navigationBar">
@@ -55,12 +79,9 @@
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <img src="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png" width: 40px; height:
-                            40px; class="d-inline-block align-top" alt="">
-                    </div>
-                    <div class="keep">
-                        Keep
+
+                    <div class="Archive">
+                        Archive
                     </div>
                 </div>
                 <!-- setting, refresh, list veiw-->
@@ -88,6 +109,7 @@
             </div>
         </nav>
 
+
         <!---------------------- SIDE NAV BAR------------------------------->
 
         <script>
@@ -101,6 +123,20 @@
         </script>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--Take A Note-->
+        <div></div>
 
         <!--Saved Notes-->
         <div id="writingHere"></div>
@@ -227,7 +263,7 @@
                                     out += '<div   class="card-title titletext " id=' + response.data[i].title + '>'
                                     out += response.data[i].title
                                     out += ' </div>'
-                                    out += ' <div class="card-text  maintext  " id=' + response.data[i].discription + ' >'
+                                    out += ' <div class="card-text  maintext   " id=' + response.data[i].discription + ' >'
                                     out += response.data[i].discription
                                     out += '</div>'
                                     out += '<div id="icons"></div>'
@@ -237,13 +273,13 @@
                                     out += '<div class="firstfour ">'
                                     out += '<span class=" io reminder"  title="reminder" id="' + response.data[i]._id + '" ><i class="foot fa fa-bell"></i> </span>'
                                     out += '<span class=" io colloborator"  title="colloborator" id="' + response.data[i]._id + '" ><i class="foot  fa fa-user-plus"></i> </span>'
-                                    out += '<span class=" io archiveMadu"  title="archive" id="' + response.data[i]._id + '" ><i class="foot fa fa-arrow-circle-o-down"></i> </span>'
+                                    out += '<span class=" io unarchiveMadu"  title="unachive" id="' + response.data[i]._id + '" ><i class="fas fa-arrow-circle-up"></i> </span>'
                                     out += '<span class=" io addPicture"  title="addPicture" id="' + response.data[i]._id + '" ><i class="foot fa fa-picture-o" title="add picture" ></i> </span>'
 
                                     //dropdown for color
                                     out += '<div class="dropdown">'
                                     out += '<a  type="text" id="dropdownMenuButton" data-toggle="dropdown" '
-                                    out += '<i title="color" class="fa fa-tachometer"></i>'
+                                    out += '<i title="color" class="fa fa-tachometer co"></i>'
                                     out += '</a>'
                                     out += ' <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">'
                                     out += '<div class="colours">'
@@ -267,10 +303,10 @@
                                     // DROP-DOWN MENU FOR MORE                 
                                     out += '<div class="dropdown">'
                                     out += '<a  type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"'
-                                    out += '<i title="more" class="foot fa fa-ellipsis-v" id="foot" ></i>'
+                                    out += '<i title="more" class="foot fa fa-ellipsis-v co" id="foot" ></i>'
                                     out += '</a>'
                                     out += ' <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">'
-                                    out += ' <a class="dropdown-item" href=""> DELETE </a>'
+                                    out += ' <a class="dropdown-item toDelete" id="' + response.data[i]._id + '" > DELETE </a>'
 
                                     out += '</div>'
                                     out += '</div>'
@@ -492,22 +528,22 @@
                         //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
                         // TO ARCHIVE
-                        $('.archiveMadu').click(function () {
+                        $('.unarchiveMadu').click(function () {
                             console.log("XXXXXXXXXX", this.id)
                             data = JSON.stringify({
                                 _id: this.id,
-                                archive: true,
+                                archive: false,
                                 headers: { "token": localStorage.getItem("token") }
                             })
                             console.log(data, "%%%%%%%%%%%%%%%%%%%%%%%%%")
                             $.ajax({
-                                url: 'http://localhost:4500/note/toArchive',
+                                url: 'http://localhost:4500/note/unArchive',
                                 type: 'POST',
                                 data: data,
                                 processData: false,
                                 contentType: 'application/json',
                                 success: function (data) {
-                                    alert("archived", data);
+                                    alert("unarchived", data);
                                 },
                                 error: function () {
                                     alert("error in archiving");
@@ -518,25 +554,29 @@
 
 
                         // TO DELETE
-                        $('.more').click(function () {
+                        $('.toDelete').click(function () {
                             console.log("XXXXXXXXXX", this.id)
                             data = JSON.stringify({
                                 _id: this.id,
-                                archive: true,
+                                toTrash : "true",
                                 headers: { "token": localStorage.getItem("token") }
                             })
                             console.log(data, "%%%%%%%%%%%%%%%%%%%%%%%%%")
                             $.ajax({
                                 url: 'http://localhost:4500/note/toTrash',
                                 type: 'POST',
-                                data: data,
+                                data: JSON.stringify({
+                                _id: this.id,
+                                toTrash : "true",
+                                headers: { "token": localStorage.getItem("token") }
+                            }),
                                 processData: false,
                                 contentType: 'application/json',
                                 success: function (data) {
                                     alert("deleted", data);
                                 },
                                 error: function () {
-                                    alert("error in archiving");
+                                    alert("error in deleting");
                                 }
                             })
                         })
@@ -562,6 +602,28 @@
 
 
 
+        <script>
+
+            $('.grid').click(function (e) {
+                if ($(this).hasClass('grid')) {
+                    $('#container ul').removeClass('list').addClass('grid');
+                }
+                else if ($(this).hasClass('list')) {
+                    $('#container ul').removeClass('grid').addClass('list');
+                }
+            });
+
+        </script>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -583,15 +645,27 @@
 
 
 
-            <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-            <!-- <script src="https://code.jquery.com/jquery-1.11.1.js"></script> -->
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-              integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-              crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-              integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-              crossorigin="anonymous"></script>
-        
+
+
+
+
+        <!-- <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script> -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-1.11.1.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+
+
+
+
+
 </body>
 
 

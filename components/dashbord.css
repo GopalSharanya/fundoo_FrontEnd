@@ -1,7 +1,7 @@
 .toolbar {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
   width: 100%;
-  font: 13px/27px Roboto, RobotoDraft, Arial, sans-serif;
+  
 }
 .toolbar1 {
   display: flex;
@@ -20,7 +20,17 @@
   height: 40px;
   font-size: 1.3rem;
 }
-
+.Archive{
+  opacity: 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  color: #3c4043;
+    font-family: Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: .25px;
+    line-height: 48px;
+}
 .rightside {
   color: #5f6368;
   display: flex;
@@ -273,7 +283,30 @@
   max-width: 208px;
 }
 
-.maintext {
+
+.maintext{
+  
+  height: 75px;
+  padding-top: 5px;
+  padding-left: 15px;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.titletext{
+  
+    height: 41px;
+    padding-top: 5px;
+    padding-left: 15px;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.co{
+  color: black;
+}
+/* .maintext {
   font-family: "Google Sans", Roboto, Arial, sans-serif;
   font-size: 1.5rem;
   font-weight: 400;
@@ -317,7 +350,7 @@
 .maintext{
   width: 207px;
     height: 96px;
-}
+} */
 
 .dropdown-toggle::after {
   display: none;
@@ -411,3 +444,10 @@
   background-color: #20B2AA
 }
 
+
+
+
+.labeladd{
+  width: -webkit-fill-available;
+  height: inherit;
+}
