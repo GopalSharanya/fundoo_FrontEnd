@@ -1,169 +1,296 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1,
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1,
       shrink-to-fit=no">
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous">
-    <link rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="dashbord.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="dashbord.css">
 
+  <script>
+    $(document).ready(function () {
+      $('#iconsbekku').load('icons.html');
+    });
+  </script>
+
+
+  <title>fundoo!!</title>
+</head>
+
+<body>
+
+
+
+  <!--Add notes card-->
+  <div class="textbox1 " id="smallOne">
+    <div class="">
+      <input type="text" class="takeanote aa" placeholder="take a note..."></input type="text">
+    </div>
+  </div>
+
+
+
+
+  <!-- second card when you click add notes-->
+  <div class="textBox2" id="largeOne">
+    <!-- <div class="card"> -->
+    <div class="cardsss">
+      <!-- <div class="  card-body text-success"> -->
+      <div class="card-title">
+        <input type="text" class="takeanote titttle" name="getTitle" id="getTitle" placeholder="  title.."
+          style="overflow: hidden"></input>
+      </div>
+      <div class="card-text">
+        <div class="secondtext">
+          <input type="text" class="takeanote discriptionn" name="getDis" id="getDis"
+            placeholder="  discription.."></input>
+        </div>
+
+        <!-----------------DO ICONS---------------------------------->
+        <div class="doicons" id="doicons">
+
+          <div class="footericons">
+            <div class="firstfour">
+              <div id="forremindng">
+                <div class="dropdown">
+                  <div class=" dropdown-toggle" data-toggle="dropdown">
+                    <i class="foot fa qq fa-bell"></i>
+                  </div>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item remindme">Reminder:</a>
+                    <a class="dropdown-item">Later Today</a>
+                    <a class="dropdown-item">select date</a>
+                    <a class="dropdown-item"> <input type="date" id="dates" name="dates"> </a>
+                    <button type="button" class="btn btn-light reminderbutton1">remind!</button>
+                  </div>
+                </div>
+              </div>
+
+
+              <div id="forcolaborator" class="forcolaborator">
+                <i class="foot fa qq fa-user-plus"></i>
+              </div>
+
+
+              <div class="toarchive" id="toarchive">
+                <i class=" toarchive foot fa qq fa-arrow-circle-o-down"></i>
+              </div>
+
+              <i class="foot fa qq fa-picture-o"></i>
+
+              <div class="toaddcolor" id="toaddcolor">
+
+
+                <div class="dropdown">
+                  <a type="text" id="dropdownMenuButton" data-toggle="dropdown">
+                    <i title="color" class=" io fa fa-tachometer"></i>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <div class="colours">
+                      <a class=" colour aab  btn " role="button" aria-pressed="true"></a>
+                      <a class=" colour bbc btn " role="button" aria-pressed="true"></a>
+                      <a class=" colour ccd  btn " role="button" aria-pressed="true"></a>
+                      <a class=" colour dde btn " role="button" aria-pressed="true"></a>
+                      <a class=" colour eef btn " role="button" aria-pressed="true"></a>
+                      <a class=" colour ffg btn " role="button" aria-pressed="true"></a>
+
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+              <div class="formore" id="formore">
+                <div class="dropdown">
+                  <div class=" dropdown-toggle" data-toggle="dropdown">
+                    <i class="foot fa qq fa-ellipsis-v"></i>
+                  </div>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item deletee">Delete</a>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="btn btn-light closebutton" id="closebutton">close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--------------------------ICONS WORKING---------------------------------------------------->
     <script>
-      $(document).ready(function() {
-    $('#iconsbekku').load('icons.html');
-});
-      </script>    
-   
 
-    <title>fundoo!!</title>
-  </head>
-  <body>
-   
-      
 
-        <!--Add notes card-->
-      <div class="textbox1 " id="smallOne">
-        <div class="">
-            <input type="text" class="takeanote aa" placeholder="take a note..."></input type="text">
-        </div>
-      </div>
+      var arch = false;
+      var trash = false;
+      var reminder = "none";
+      var color = "#FFFFFF";
 
 
 
-  
-      <!-- second card when you click add notes-->
-      <div class="textBox2" id="largeOne">
-          <!-- <div class="card"> -->
-            <div class="cardsss">
-              <!-- <div class="  card-body text-success"> -->
-                <div class="card-title">
-                    <input type="text" class="takeanote titttle" name="getTitle" id="getTitle"    placeholder="  title.." style="overflow: hidden"></input>
-                </div>
-                <div class="card-text">
-                  <div class="iconnn">
-                    
-                    <input type="text" class="takeanote discriptionn" name="getDis" id="getDis"   placeholder="  discription.."></input>
-                    <div class="iconandbutton">
-                    <div id="iconsbekku"></div>
-                
+      $('.deletee').click(function () {
+        trash = true
+      })
+
+      $('.toarchive').click(function () {
+        arch = true
+      })
 
 
-                  <div class="buttonclass">
-                    <button type="button" id="closebutton" class=" closebutton oooo text-dark">close</button>       
-                 </div>
-                </div>
-                </div>
-                </div>
-                <!-- </div> -->
-                <!--importing icons to footer-->
-                <div class="withicons">
 
-                  <div id="iconsbekku"></div>
-                 
-                   </div>
+      //REMINDERS
 
-                </div>
-               
-          <!-- </div> -->
-        </div>
-      </div>
+      $('.reminderbutton1').click(function () {
+        reminder = $("#dates").val().trim();
+      })
 
 
-      
+      // FOR COLORS
+      $('.aab').click(function () {
+        color = "#FF0000"
+      })
 
 
-   
-<!-- Script to hide and open addNotes Card    --> 
-      <script>
+      $('.bbc').click(function () {
+        color = " #7FFFD4"
+      })
 
-          $(document).ready(function(){
-            $("#largeOne").hide();
-            $("#closebutton").click(function(){
-              $("#largeOne").hide();
-              $("#smallOne").show();
+      $('.ccd').click(function () {
+        color = " #A52A2A"
+      })
+
+      $('.dde').click(function () {
+        color = "#5F9EA0"
+      })
+
+
+      $('.eef').click(function () {
+        color = "#B8860B"
+      })
+
+
+      $('.ffg').click(function () {
+        color = "#20B2AA"
+      })
+
+
+      // COLOR
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Script to hide and open addNotes Card    -->
+    <script>
+
+      $(document).ready(function () {
+        $("#largeOne").hide();
+        $("#closebutton").click(function () {
+          $("#largeOne").hide();
+          $("#smallOne").show();
+        })
+
+
+        $("#smallOne").click(function () {
+          $("#smallOne").hide();
+          $("#largeOne").show();
+        })
+
+      });
+
+    </script>
+
+
+    <!-- Script to add title and discription and save notes-->
+    <script>
+
+      $(document).ready(function () {
+
+        $("#closebutton").click(function () {
+
+
+          event.preventDefault();
+          var title = $(".titttle").val().trim();
+          var discription = $(".discriptionn").val().trim();
+          data1 = JSON.stringify({
+            discription: discription,
+            title: title,
+            archive: arch,
+            trash: trash,
+            reminder: reminder,
+            color: color,
+            headers: { "token": localStorage.getItem("token") }
+          })
+          console.log(data1)
+          if (title != "" && discription != "") {
+            $.ajax({
+              url: 'http://localhost:4500/note/addNote',
+              type: 'POST',
+              data: JSON.stringify({
+                discription: discription,
+                title: title,
+                archive: arch,
+                trash: trash,
+                reminder: reminder,
+                color: color,
+                headers: { "token": localStorage.getItem("token") }
+              }),
+              processData: false,
+              contentType: 'application/json',
+              success: function (data) {
+                console.log(data, " DATA BACK FROM BACKEND @@@@@@");
+
+                alert('ADDED:)')
+              },
+              error: function (jqXHR, textStatus, err) {
+                alert('text status ' + textStatus + ', err ' + err)
+              }
+
             })
-          
-          
-            $("#smallOne").click(function(){
-              $("#smallOne").hide();
-              $("#largeOne").show();
-            })
-          
-          });
-          
-          </script>
+          }
+          else {
+            alert("title or discription can't be empty!!")
+          }
 
-
-<!-- Script to add title and discription and save notes-->
-          <script>
-
-              $(document).ready(function(){
-
-                $("#closebutton").click(function(){
-                  event.preventDefault();
-                  var title = $(".titttle").val().trim();
-                  var discription = $(".discriptionn").val().trim();
-                 console.log("fromm SCRIPTTT",title,"DIS",discription,">>>>>>>>>>>>>>>>>>>>");
-
-                  if(title != "" && discription != ""){
-                    $.ajax({
-                    url: 'http://localhost:4500/note/addNote',
-                    type: 'POST',
-                    data: JSON.stringify({
-                      discription : discription,
-                      title : title,
-                      headers: {"token": localStorage.getItem("token")}
-                    }),
-                    processData: false,
-                    contentType: 'application/json',
-                    success: function (data) {
-                      console.log(data," DATA BACK FROM BACKEND @@@@@@");
-
-                        alert('ADDED:)')
-                    },
-                    error: function (jqXHR, textStatus, err) {
-                        alert('text status ' + textStatus + ', err ' + err)
-                    }
-
-                })
-                  }
-                  else{
-                    alert("title or discription can't be empty!!")
-                  }
-
-                })
-              })     
-          </script>
+        })
+      })     
+    </script>
 
 
 
 
-          
 
 
-   
-     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"></script>  
+      crossorigin="anonymous"></script>
 
-      <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
       integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
       crossorigin="anonymous"></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"></script>
-  </body>
+</body>
+
 </html>

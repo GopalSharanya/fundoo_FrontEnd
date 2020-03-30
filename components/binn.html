@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<style>
+    div[class^="col"] {
+        height: 50px;
+        box-sizing: border-box;
+        border: 1px solid green;
+        flex: 1;
+    }
+.coluna {
+    flex-direction: column;
+}
+
+</style>
+</head>
+<body>
+    <button>coluna/linha</button>
+    <div class="container">
+        <div id="colunaX" class="row flex-column">
+          <div class="col-xs-2">
+            1 of 2
+          </div>
+          <div class="col-xs-2">
+            2 of 2
+          </div>
+          <div class="col-xs-2">
+            2 of 2
+          </div>
+          <div class="col-xs-2">
+            2 of 2
+          </div>
+          <div class="col-xs-2">
+            2 of 2
+          </div>
+          <div class="col-xs-2">
+            2 of 2
+          </div>
+        </div>
+      </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+    $("button").click(function(){
+        $("#colunaX").toggleClass("flex-column");
+    });
+    </script>
+</body>
+</html>

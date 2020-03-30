@@ -26,3 +26,32 @@
     width: 89%;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.item.list-group-item
+{
+	float: none;
+	width: 100%;
+	background-color:green;
+}
+.item.list-group-item:before,
+.item.list-group-item:after {
+  display: table;
+  content: " ";
+}
+
+.item.list-group-item img{float:left;}
+.item.list-group-item:after
+{
+	clear:both;
+}
