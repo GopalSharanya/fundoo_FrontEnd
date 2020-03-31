@@ -516,6 +516,10 @@ width: 170px !important;
   background-color: #20B2AA
 }
 
+.notes3{
+  height: fit-content
+}
+
 
 .labeladd{
   width: -webkit-fill-available;

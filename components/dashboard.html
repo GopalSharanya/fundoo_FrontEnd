@@ -18,20 +18,7 @@
 
 
 
-  <style>
-    div[class^="col"] {
-      height: 142px;
-      border-style: dashed;
-      width: auto;
-      box-sizing: border-box;
-      border: 1px solid green;
-      flex: 1;
-    }
 
-    .coluna {
-      flex-direction: column;
-    }
-  </style>
 
 
   <!--LOAD TAKE A NOTE-->
@@ -253,7 +240,7 @@
   <!--Take A Note-->
   <div id="takeaNote"></div>
 
-  <button class="buttongrd">coluna/linha</button>
+ 
 
 
   <!---------GAP -->
@@ -366,17 +353,16 @@
         success: function (response) {
           notes = response.data;
           
-         var out = '<div class="container">'
-          out += '<div id="colunaX" class="row flex-column">'
+
           for (var i = 0; i < response.data.length; i++) {
             $.each(response.data[i], function (key, value) {
               if (key == "title" && response.data[i].isArchive != true && response.data[i].isTrash != true) {
                 var idety = response.data[i]._id;
-                out = ' <div class="notes3">'
+               var out = ' <div class="notes3">'
                 out += '<div class="forcolor ' + response.data[i]._id + '">'
                 out += '<div class="modifiySavedNotes">'
                 out += '<div class="iconsdu " id="' + response.data[i]._id + '">'
-                out += '<div class="col-xs-2">'
+                
                 out += '  <div class="card cc ' + response.data[i]._id + '">'
                 out += '<div  data-toggle="modal" data-target="#modalupdate" class="card-title titletext " id=' + response.data[i]._id + '>'
                 out += response.data[i].title
@@ -458,7 +444,7 @@
                 out += '</div>'
                 out += '</div>'
                 out += '</div>'
-                out += '</div>'
+               
 
                 // REMINDERSS...
                 $(function ($) {
@@ -529,9 +515,6 @@
             })
           }
 
-          out += '</div>'
-          out += '</div>'
-          $('#writingHere').append(out);
           // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! APPLY COLOR !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
           $(function ($) {
@@ -935,11 +918,7 @@
   </script>
 
 
-  <script>
-    $(".buttongrd").click(function () {
-      $("#colunaX").toggleClass("flex-column");
-    });
-  </script>
+
 
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"

@@ -2,26 +2,33 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1,
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
       shrink-to-fit=no">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-  <!--CDN FOR DIALOG BOX EDIT CARDS-->
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <!--DIALOG BOX FOR EDIT CARDS-->
+    <!--CDN FOR DIALOG BOX EDIT CARDS-->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-
-
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--DIALOG BOX FOR EDIT CARDS-->
 
 
 
- 
+
+
+
+
+    <!--LOAD TAKE A NOTE-->
+    <script>
+        $(document).ready(function () {
+            $('#takeaNote').load('takeaNote.html');
+        });
+    </script>
 
 
   <!--LOAD ICONS -->
@@ -43,69 +50,73 @@
 
 
 
+    <!--ADD CSS FROM DASHVOARD CSS-->
+    <link rel="stylesheet" href="dashbord.css">
+
+    <!--TITLE BAR ICON-->
+    <link rel="shortcut icon" href="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png"
+        type="image/x-icon">
+
+    <!--TITLE-->
+    <title>FuNdooo</title>
+
+
+
+
 </head>
 
 <body>
 
-  <!-- navigation bar-->
-  <div class="navigationBar">
-    <nav class="toolbar">
-      <div class="toolbar1">
-        <!-- keep, side navigation bar-->
-        <div class="keep-allignment">
-          <div class="sidenavigationbar">
-            <div class="menubar">
-              <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#8801;
-              </span>
-            </div>
-            <div id="mySidenav" class="sidenav">
-              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-              <div class="sideIcons">
-                <a class="iiit " href="dashboard.html"><i class="fa iiii fa-lightbulb-o notes"></i>Notes</a>
-                <a class=""><i class="fa iiii fa-bell-o reminders"></i>Reminders</a>
-                <div class="dropdown-divider"></div>
-                <a data-toggle="modal" data-target="#exampleModalCenter"><i
-                    class="fa iiii fa-pencil editLabels"></i>Edit Labels</a>
-                <div class="clickherelab">
-                  <div class="getherelabels"></div>
+    <!-- navigation bar-->
+    <div class="navigationBar">
+        <nav class="toolbar">
+            <div class="toolbar1">
+                <!-- keep, side navigation bar-->
+                <div class="keep-allignment">
+                    <div class="sidenavigationbar">
+                        <div class="menubar">
+                            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#8801;
+                            </span>
+                        </div>
+                        <div id="mySidenav" class="sidenav">
+                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                            <div class="sideIcons">
+                                <a class="iiit "><i class="fa iiii fa-lightbulb-o notes"></i>Notes</a>
+                                <a class=""><i class="fa iiii fa-bell-o reminders"></i>Reminders</a>
+                                <div class="dropdown-divider"></div>
+                                <a><i class="fa iiii fa-pencil editLabels"></i>Edit Labels</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="archive"><i class="fa iiii fa-arrow-circle-down archive"></i>Archive</a>
+                                <a><i class="fa iiii fa-trash-o bin"></i>Bin</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="Archive">
+                        Archive
+                    </div>
                 </div>
+                <!-- setting, refresh, list veiw-->
+                <div class="rightside">
+                    <div class="threeicons">
+                        <i class="repeat pp7 fa fa-repeat fa-lg" title="refresh"></i>
+                        <i class="listbar pp7 fa fa-bars fa-lg"></i>
+                        <i class="setting pp7 fa fa-cog fa-lg"></i>
+                    </div>
+                </div>
+                <!-- sign out awathar-->
+                <div class="signoutdropdown">
+                    <li class="nav-item avatar dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-5" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <img src="" class="rounded-circle z-depth-0" alt="avatar image">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdownMenuLink-5">
+                            <a class="dropdown-item" href="#">Sign-Out</a>
 
-                <script>
-                  $(document).ready(function () {
-                    $.ajax({
-                      url: 'http://localhost:4500/note/getNotes',
-                      type: 'POST',
-                      data: JSON.stringify({
-                        headers: { "token": localStorage.getItem("token") }
-                      }),
-                      processData: false,
-                      contentType: 'application/json',
-                      success: function (res) {
-                        for (var t = 0; t < res.data.length; t++) {
-                          if (res.data[t].label.length > 0) {
-                            for (var h = 0; h < res.data[t].label.length; h++) {
-                              var $ll = $("<div class='human' id=" + res.data[t].label[h] + " >" + res.data[t].label[h] + "</div> <br>")
-                              $('.getherelabels').append($ll);
-
-
-                            }
-                          }
-                        }
-
-                      },
-                      error: function (jqXHR, textStatus, err) {
-                        alert('text status ' + textStatus + ', err ' + err)
-                      }
-
-                    })
-                  });
-                </script>
-
-
-
-
-
-
+                        </div>
+                    </li>
+                </div>
 
                 <div class="dropdown-divider"></div>
                 <a class="binn" href="archive.html"><i  class="fa iiii fa-trash-o bin"></i>ARCHIVE</a>
@@ -159,6 +170,8 @@
   </nav>
 
 
+        <!---------------------- SIDE NAV BAR------------------------------->
+
 
   <!----------------------------TO SEARCHH------------------------------------>
 
@@ -189,7 +202,22 @@
   </script>
 
 
-  <!---------------------- SIDE NAV BAR------------------------------->
+
+
+
+
+
+
+
+
+
+
+
+        <!--Take A Note-->
+        <div></div>
+
+        <!--Saved Notes-->
+        <div id="writingHere"></div>
 
 
   <!------TO GO TO ARCHIVE NOTES PAGE---------->
@@ -478,16 +506,337 @@
                     }),
                     processData: false,
                     contentType: 'application/json',
-                    success: function (res) {
-                      if (res.data[0]._id === colId)
-                        $("." + colId).css('background-color', res.data[0].color);
-                    },
-                    error: function (jqXHR, textStatus, err) {
-                      alert('text status ' + textStatus + ', err ' + err)
-                    }
+                    success: function (response) {
+                        console.log("*****************************************", response)
+                        notes = response.data;
+                        for (var i = 0; i < response.data.length; i++) {
+                            $.each(response.data[i], function (key, value) {
+                                if (key == "title" && response.data[i].isArchive === true && response.data[i].isTrash != true) {
+                                    var out = ' <div class="notes3">'
+                                    out += '<div class="forcolor ' + response.data[i]._id + '">'
+                                    out += '<div class="modifiySavedNotes">'
+                                    out += '<div class="iconsdu " id="' + response.data[i]._id + '">'
+                                    out += '  <div class="card cc ' + response.data[i]._id + '">'
+                                    out += '<div   class="card-title titletext " id=' + response.data[i].title + '>'
+                                    out += response.data[i].title
+                                    out += ' </div>'
+                                    out += ' <div class="card-text  maintext   " id=' + response.data[i].discription + ' >'
+                                    out += response.data[i].discription
+                                    out += '</div>'
+                                    out += '<div id="icons"></div>'
 
-                  })
-                });
+                                    //for icons
+                                    out += ' <div class="footericons">'
+                                    out += '<div class="firstfour ">'
+                                    out += '<span class=" io reminder"  title="reminder" id="' + response.data[i]._id + '" ><i class="foot fa fa-bell"></i> </span>'
+                                    out += '<span class=" io colloborator"  title="colloborator" id="' + response.data[i]._id + '" ><i class="foot  fa fa-user-plus"></i> </span>'
+                                    out += '<span class=" io unarchiveMadu"  title="unachive" id="' + response.data[i]._id + '" ><i class="fas fa-arrow-circle-up"></i> </span>'
+                                    out += '<span class=" io addPicture"  title="addPicture" id="' + response.data[i]._id + '" ><i class="foot fa fa-picture-o" title="add picture" ></i> </span>'
+
+                                    //dropdown for color
+                                    out += '<div class="dropdown">'
+                                    out += '<a  type="text" id="dropdownMenuButton" data-toggle="dropdown" '
+                                    out += '<i title="color" class="fa fa-tachometer co"></i>'
+                                    out += '</a>'
+                                    out += ' <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">'
+                                    out += '<div class="colours">'
+                                    out += '<a id="' + response.data[i]._id + '" class=" colour one btn " role="button" aria-pressed="true"></a>'
+                                    out += '<a id="' + response.data[i]._id + '"class=" colour two btn " role="button" aria-pressed="true"></a>'
+                                    out += '<a id="' + response.data[i]._id + '" class=" colour three btn " role="button" aria-pressed="true"></a>'
+                                    out += '<a id="' + response.data[i]._id + '" class=" colour four btn " role="button" aria-pressed="true"></a>'
+                                    out += '<a id="' + response.data[i]._id + '" class=" colour five btn " role="button" aria-pressed="true"></a>'
+                                    out += '<a id="' + response.data[i]._id + '" class=" colour six btn " role="button" aria-pressed="true"></a>'
+
+                                    out += '</div>'
+                                    out += '</div>'
+                                    out += '</div>'
+
+
+
+
+
+
+
+                                    // DROP-DOWN MENU FOR MORE                 
+                                    out += '<div class="dropdown">'
+                                    out += '<a  type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"'
+                                    out += '<i title="more" class="foot fa fa-ellipsis-v co" id="foot" ></i>'
+                                    out += '</a>'
+                                    out += ' <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">'
+                                    out += ' <a class="dropdown-item toDelete" id="' + response.data[i]._id + '" > DELETE </a>'
+
+                                    out += '</div>'
+                                    out += '</div>'
+                                    out += '</div>'
+
+
+
+
+                                    // GET COLOUR CARD VISE
+                                    $(document).ready(function () {
+                                        var colId = response.data[i]._id;
+                                        var colmain = response.data[i].title;
+                                        console.log("XXXXXXXXXX", response.data[i]._id);
+                                        $.ajax({
+                                            url: 'http://localhost:4500/note/getcolor',
+                                            type: 'POST',
+                                            data: JSON.stringify({
+                                                _id: response.data[i]._id,
+                                                headers: { "token": localStorage.getItem("token") }
+
+                                            }),
+                                            processData: false,
+                                            contentType: 'application/json',
+                                            success: function (res) {
+                                                console.log(res.data[0]._id, "OOOOOOOO", colId)
+                                                if (res.data[0]._id === colId)
+                                                    $("." + colId).css('background-color', res.data[0].color);
+                                            },
+                                            error: function (jqXHR, textStatus, err) {
+                                                alert('text status ' + textStatus + ', err ' + err)
+                                            }
+
+                                        })
+                                    });
+
+                                    $('#writingHere').append(out);
+                                }
+                            })
+                        }
+
+                        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! APPLY COLOR !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+                        $(function ($) {
+                            $(".one").click(function () {
+                                var colId = this.id;
+                                color = "#FF0000";
+                                console.log("XXXXXXXXXX", this.id);
+                                $.ajax({
+                                    url: 'http://localhost:4500/note/color',
+                                    type: 'PUT',
+                                    data: JSON.stringify({
+                                        _id: colId,
+                                        color: color,
+                                        headers: { "token": localStorage.getItem("token") }
+                                    }),
+                                    processData: false,
+                                    contentType: 'application/json',
+                                    success: function (response) {
+                                        console.log(response, "response");
+
+                                        alert("color changed :)")
+                                    }
+                                })
+                            })
+                        })
+
+
+                        $(function ($) {
+                            $(".two").click(function () {
+                                var colId = this.id;
+                                console.log("XXXXXXXXXX", this.id);
+                                $.ajax({
+                                    url: 'http://localhost:4500/note/color',
+                                    type: 'PUT',
+                                    data: JSON.stringify({
+                                        _id: colId,
+                                        color: "#7FFFD4",
+                                        headers: { "token": localStorage.getItem("token") }
+                                    }),
+                                    processData: false,
+                                    contentType: 'application/json',
+                                    success: function (response) {
+                                        alert("color changed :)")
+                                    }
+                                })
+                            })
+                        })
+
+                        $(function ($) {
+                            $(".three").click(function () {
+                                var colId = this.id;
+                                console.log("XXXXXXXXXX", this.id);
+                                $.ajax({
+                                    url: 'http://localhost:4500/note/color',
+                                    type: 'PUT',
+                                    data: JSON.stringify({
+                                        _id: colId,
+                                        color: "#A52A2A",
+                                        headers: { "token": localStorage.getItem("token") }
+                                    }),
+                                    processData: false,
+                                    contentType: 'application/json',
+                                    success: function (response) {
+                                        alert("color changed :)")
+                                    }
+                                })
+                            })
+                        })
+
+
+
+                        $(function ($) {
+                            $(".four").click(function () {
+                                var colId = this.id;
+                                console.log("XXXXXXXXXX", this.id);
+                                $.ajax({
+                                    url: 'http://localhost:4500/note/color',
+                                    type: 'PUT',
+                                    data: JSON.stringify({
+                                        _id: colId,
+                                        color: "#5F9EA0",
+                                        headers: { "token": localStorage.getItem("token") }
+                                    }),
+                                    processData: false,
+                                    contentType: 'application/json',
+                                    success: function (response) {
+                                        alert("color changed :)")
+                                    }
+                                })
+                            })
+                        })
+
+
+                        $(function ($) {
+                            $(".five").click(function () {
+                                var colId = this.id;
+                                console.log("XXXXXXXXXX", this.id);
+                                $.ajax({
+                                    url: 'http://localhost:4500/note/color',
+                                    type: 'PUT',
+                                    data: JSON.stringify({
+                                        _id: colId,
+                                        color: "#B8860B",
+                                        headers: { "token": localStorage.getItem("token") }
+                                    }),
+                                    processData: false,
+                                    contentType: 'application/json',
+                                    success: function (response) {
+                                        alert("color changed :)")
+                                    }
+                                })
+                            })
+                        })
+
+
+                        $(function ($) {
+                            $(".six").click(function () {
+                                var colId = this.id;
+                                console.log("XXXXXXXXXX", this.id);
+                                $.ajax({
+                                    url: 'http://localhost:4500/note/color',
+                                    type: 'PUT',
+                                    data: JSON.stringify({
+                                        _id: colId,
+                                        color: "#20B2AA",
+                                        headers: { "token": localStorage.getItem("token") }
+                                    }),
+                                    processData: false,
+                                    contentType: 'application/json',
+                                    success: function (response) {
+                                        alert("color changed :)")
+                                    }
+                                })
+                            })
+                        })
+
+
+
+
+
+
+
+                        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+                        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! LOAD DIALOG BOX  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+                        $(function () {
+                            var got;
+                            $(".clickme").click(function () {
+
+                                console.log("XXXXXXXXXX", this.id)
+                                console.log(document.getElementById("rat"));
+
+                                for (let i = 0; i < notes.length; i++) {
+                                    if (notes[i]._id === this.id) {
+                                        got = notes[i]
+
+                                        $("#dialog").dialog(
+                                            {
+                                                autoOpen: false, modal: true, show: "blind", hide: "blind",
+                                                create: function () {
+                                                    document.getElementById("rat").innerHTML = got.title;
+                                                    document.getElementById("cat").innerHTML = got.discription;
+                                                    document.getElementsByClassName("updateButton").id = got._id
+                                                    $("#cat").get(0).contentEditable = "true";
+                                                    $("#rat").get(0).contentEditable = "true";
+                                                }
+                                            });
+                                    }
+                                }
+                                $("#dialog").dialog("open");
+                                return false;
+                            })
+                        });
+
+
+                        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+                        // TO ARCHIVE
+                        $('.unarchiveMadu').click(function () {
+                            console.log("XXXXXXXXXX", this.id)
+                            data = JSON.stringify({
+                                _id: this.id,
+                                archive: false,
+                                headers: { "token": localStorage.getItem("token") }
+                            })
+                            console.log(data, "%%%%%%%%%%%%%%%%%%%%%%%%%")
+                            $.ajax({
+                                url: 'http://localhost:4500/note/unArchive',
+                                type: 'POST',
+                                data: data,
+                                processData: false,
+                                contentType: 'application/json',
+                                success: function (data) {
+                                    alert("unarchived", data);
+                                },
+                                error: function () {
+                                    alert("error in archiving");
+                                }
+                            })
+                        })
+
+
+
+                        // TO DELETE
+                        $('.toDelete').click(function () {
+                            console.log("XXXXXXXXXX", this.id)
+                            data = JSON.stringify({
+                                _id: this.id,
+                                toTrash : "true",
+                                headers: { "token": localStorage.getItem("token") }
+                            })
+                            console.log(data, "%%%%%%%%%%%%%%%%%%%%%%%%%")
+                            $.ajax({
+                                url: 'http://localhost:4500/note/toTrash',
+                                type: 'POST',
+                                data: JSON.stringify({
+                                _id: this.id,
+                                toTrash : "true",
+                                headers: { "token": localStorage.getItem("token") }
+                            }),
+                                processData: false,
+                                contentType: 'application/json',
+                                success: function (data) {
+                                    alert("deleted", data);
+                                },
+                                error: function () {
+                                    alert("error in deleting");
+                                }
+                            })
+                        })
 
                 $('#writingHere').append(out);
 
@@ -653,6 +1002,28 @@
               return false;
             })
           });
+
+
+
+        <script>
+
+            $('.grid').click(function (e) {
+                if ($(this).hasClass('grid')) {
+                    $('#container ul').removeClass('list').addClass('grid');
+                }
+                else if ($(this).hasClass('list')) {
+                    $('#container ul').removeClass('grid').addClass('list');
+                }
+            });
+
+        </script>
+
+
+
+
+
+
+
 
 
 
@@ -913,6 +1284,27 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+        <!-- <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script> -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-1.11.1.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
 
 
 
